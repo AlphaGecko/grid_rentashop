@@ -24,6 +24,30 @@ case3 = {
     description_projet: "Ceci est ma description de projet 3"
 }
 
+case4 = {
+    lien_image: "./images/image1.jpg",
+    lien_partenaire: "https://www.google.com",
+    alt: "partenaire numéro 4", 
+    description_site: "Ceci est ma description de site 4", 
+    description_projet: "Ceci est ma description de projet 4", 
+}
+
+case5 = {
+    lien_image: "./images/image2.jpg",
+    lien_partenaire: "https://www.google.com",
+    alt: "partenaire numéro 5", 
+    description_site: "Ceci est ma description de site 5", 
+    description_projet: "Ceci est ma description de projet 5", 
+}
+
+case6 = {
+    lien_image: "./images/image3.jpg",
+    lien_partenaire: "https://www.google.com",
+    alt: "partenaire numéro 6", 
+    description_site: "Ceci est ma description de site 6", 
+    description_projet: "Ceci est ma description de projet 6"
+}
+
 
 /* Lancement du script selon les données que vous avez saisie. Enjoy ;) */
 
@@ -42,8 +66,9 @@ blocCreation = (firstCase, secondCase, thirdCase) => {
 }
 
 blocCreation(case1, case2, case3);
+blocCreation(case4, case5, case6);
 
 arrayStorage.forEach(bloc => {
-    $('#ref_container').html(bloc)
+    $('#ref_container').prepend(bloc);
 });
 
