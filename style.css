@@ -78,7 +78,7 @@
 
 /* Apparition du texte au hover */ 
 
-.description_image1, .description_image2, .description_image3 {
+.description_image {
     position: absolute;
     width: 100%; 
     height: 100%; 
