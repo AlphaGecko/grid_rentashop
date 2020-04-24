@@ -109,7 +109,24 @@ const blocCreation = (firstCase, secondCase, thirdCase) => {
 while (howManyBlocsGonnaBeCreated > 0) {
     blocCreation(allCases[arrayCursor1], allCases[arrayCursor2], allCases[arrayCursor3]); 
     howManyBlocsGonnaBeCreated--
-    arrayCursor1 + 3;
-    arrayCursor2 + 3;
-    arrayCursor3 + 3;
+    arrayCursor1 = arrayCursor1 + 3;
+    arrayCursor2 = arrayCursor2 + 3;
+    arrayCursor3 = arrayCursor3 + 3;
+}
+
+/* Lancement des tests avant d'insérer les éléments au DOM */ 
+
+let testingUserEntries = new BlocsTest ();
+testingUserEntries.initializeTests(); 
+
+/* Si les tests sont bons, intégration des blocs au DOM */ 
+
+if (testingUserEntries.gridTest === "ok") {
+    console.log("Fin des tests. Ajout des éléments au DOM");
+    arrayBlocStorage.forEach(bloc => {
+        $('#ref_container').append(bloc);
+    });
+} else {
+    console.log("Fin des tests. Erreur");
+    $('#ref_container').append(testingUserEntries.testError);
 }
