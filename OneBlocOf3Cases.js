@@ -30,7 +30,7 @@ class OneBlocOf3Cases  {
         return (
             `<div class="oneBloc" id="number_${this.numberOfTheBloc}">
                 <div class="firstCase">
-                    <a href=${this.url_partenaire_1}>
+                    <a href=${this.url_partenaire_1} target="_blank" rel="noopener noreferrer nofollow">
                         <p>
                             <img src=${this.lien_image_1} alt=${this.alt_1} onmouseenter="dynamicEnter1(${this.numberOfTheBloc})" onmouseleave="dynamicExit(${this.numberOfTheBloc})"/>
                             <span class="dynamic_background"></span>
@@ -40,7 +40,7 @@ class OneBlocOf3Cases  {
                     </a>
                 </div>
                 <div class="secondCase">
-                    <a href=${this.url_partenaire_2}>
+                    <a href=${this.url_partenaire_2} target="_blank" rel="noopener noreferrer nofollow">
                         <p>
                             <img src=${this.lien_image_2} alt=${this.alt_2} onmouseenter="dynamicEnter2(${this.numberOfTheBloc})" onmouseleave="dynamicExit(${this.numberOfTheBloc})"/>
                             <span class="dynamic_background"></span>
@@ -50,7 +50,7 @@ class OneBlocOf3Cases  {
                     </a>
                 </div>
                 <div class="thirdCase">
-                    <a href=${this.url_partenaire_3}>
+                    <a href=${this.url_partenaire_3} target="_blank" rel="noopener noreferrer nofollow">
                         <p>
                             <img src=${this.lien_image_3} alt=${this.alt_3} onmouseenter="dynamicEnter3(${this.numberOfTheBloc})" onmouseleave="dynamicExit(${this.numberOfTheBloc})"/>
                             <span class="description_image dynamic_background"></span>

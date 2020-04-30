@@ -104,6 +104,7 @@ const blocCreation = (firstCase, secondCase, thirdCase) => {
     howManyBlocsHasBeenCreated++
 }
 
+
 /* insère dynamiquement le nombre de blocs dans le tableau en fonction des entrées de l'utilisateur */
 
 while (howManyBlocsGonnaBeCreated > 0) {
