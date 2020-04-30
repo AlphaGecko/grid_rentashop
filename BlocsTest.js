@@ -9,7 +9,9 @@ class BlocsTest  {
 
     initializeTests() {
 
-        if (caseNumber % 3 !== 0) {
+        let blocFilledWithDatas = new CreationOfBlocs();
+
+        if (blocFilledWithDatas.caseNumber % 3 !== 0) {
             this.testError = "<strong>Le nombre de case doit être un multiple de 3.</strong>"; 
             console.log("Echec")
             this.modulo3Test = "Erreur"
