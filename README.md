@@ -5,7 +5,14 @@ Ce script à été créé par MANSOUR Jean-Loup (AlphaGecko).
 # grid_rentashop
 
 Ce que j'appelle "bloc" correspond à une ligne contenant 3 cases. 
+
 Les "cases" sont donc les images relatives aux partenaires et les différents textes associés. 
+
+Vous ne devez modifier que "custom.js". 
+
+Modifiez les styles (fonts, sizes etc...) de préférence avec la feuille de style de votre site ou application plutôt que celle de Grid_Rentashop. 
+
+Index.html et une page d'exemple. Vous pouvez la supprimer si vous avez compris la logique et le fonctionnement de Grid_Rentashop.
 
 ### Structure pour trois cases 
 
