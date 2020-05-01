@@ -39,4 +39,4 @@ Créez toujours les cases trois par trois.
 
 ## NOTE 
 
-Script entièrement prêt à l'emploi. Il ne reste plus qu'à ajouter dans votre page un container vide avec la classe "ref_container". 
+Script entièrement prêt à l'emploi. Il ne reste plus qu'à ajouter dans votre page un container vide avec la classe "ref_container".
