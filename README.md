@@ -47,7 +47,7 @@ case3 = {
 
 ## !! IMPORTANT !!
 
-Créez toujours les cases trois par trois. Vous pouvez ajouter autants de blocs que vous le souhaitez, le script s'adaptera.
+Créez toujours les cases trois par trois. Vous pouvez ajouter autants de blocs que vous le souhaitez, le script s'adaptera.  
 Les scripts nécessitent un accès à la biblitothèque Jquery.
 
 ## Mode d'emploi 
