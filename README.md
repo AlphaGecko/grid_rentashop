@@ -46,4 +46,4 @@ Créez toujours les cases trois par trois.
 
 ## NOTE 
 
-Script entièrement prêt à l'emploi. Il ne reste plus qu'à ajouter dans votre page un container vide avec la classe "ref_container".
+Script entièrement prêt à l'emploi. Il ne reste plus qu'à ajouter dans votre page un container vide avec la classe "ref_container", à ajouter les script en bas de votre body (dans l'ordre dans lequel ils apparaissent dans la page d'exemple) et appeler la feuille de style dans le header.
