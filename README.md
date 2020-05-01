@@ -14,7 +14,7 @@ Ce que j'appelle "bloc" correspond à une ligne contenant 3 cases.
 
 Les "cases" sont donc les images relatives aux partenaires et les différents textes associés. 
 
-Vous ne devez modifier que "custom.js". 
+Vous ne devez modifier que "custom.js" pour vous servir de Grid_Rentashop. 
 
 Modifiez les styles (fonts, sizes etc...) de préférence avec la feuille de style de votre site ou application plutôt que celle de Grid_Rentashop. 
 
