@@ -4,6 +4,8 @@ Ce script à été créé par MANSOUR Jean-Loup (AlphaGecko) Pour l'entreprise R
 
 # grid_rentashop
 
+## Introduction
+
 Ce que j'appelle "bloc" correspond à une ligne contenant 3 cases. 
 
 Les "cases" sont donc les images relatives aux partenaires et les différents textes associés. 
@@ -12,12 +14,12 @@ Vous ne devez modifier que "custom.js".
 
 Modifiez les styles (fonts, sizes etc...) de préférence avec la feuille de style de votre site ou application plutôt que celle de Grid_Rentashop. 
 
-### Vous pouvez supprimer :
+## Vous pouvez supprimer :
 
 Index.html qui est une page d'exemple, si vous avez compris la logique et le fonctionnement de Grid_Rentashop.
 Les images du dossier "images".
 
-### Structure pour trois cases, dans custom.js
+## Structure pour trois cases, dans custom.js
 
 case1 = {  
     lien_image: "./relative_path/image.jpg",  
