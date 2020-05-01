@@ -23,9 +23,9 @@ class CreationOfBlocs {
         this.howManyBlocsHasBeenCreated++
     }
 
-    /* Ajout des éléments virtuels au DOM */ 
+    /* Ajout les éléments dans un tableau */ 
 
-    AddDatasToDom = () => {
+    AddDatasToArray = () => {
         while (this.howManyBlocsGonnaBeCreated > 0) {
             this.blocCreation(
                 allCases[this.arrayCursor1], 
