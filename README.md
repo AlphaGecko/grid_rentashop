@@ -17,7 +17,7 @@ Modifiez les styles (fonts, sizes etc...) de préférence avec la feuille de sty
 Index.html qui est une page d'exemple, si vous avez compris la logique et le fonctionnement de Grid_Rentashop.
 Les images du dossier "images".
 
-### Structure pour trois cases 
+### Structure pour trois cases, dans custom.js
 
 case1 = {  
     lien_image: "./relative_path/image.jpg",  
@@ -45,7 +45,7 @@ case3 = {
 
 ## !! IMPORTANT !!
 
-Créez toujours les cases trois par trois.
+Créez toujours les cases trois par trois. Vous pouvez ajouter autants de blocs que vous le souhaitez, le script s'adaptera.
 
 ## NOTE 
 
