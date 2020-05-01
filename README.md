@@ -12,7 +12,10 @@ Vous ne devez modifier que "custom.js".
 
 Modifiez les styles (fonts, sizes etc...) de préférence avec la feuille de style de votre site ou application plutôt que celle de Grid_Rentashop. 
 
-Index.html et une page d'exemple. Vous pouvez la supprimer si vous avez compris la logique et le fonctionnement de Grid_Rentashop.
+### Vous pouvez supprimer :
+
+Index.html qui est une page d'exemple, si vous avez compris la logique et le fonctionnement de Grid_Rentashop.
+Les images du dossier "images".
 
 ### Structure pour trois cases 
 
