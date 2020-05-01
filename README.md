@@ -48,10 +48,11 @@ case3 = {
 ## !! IMPORTANT !!
 
 Créez toujours les cases trois par trois. Vous pouvez ajouter autants de blocs que vous le souhaitez, le script s'adaptera.
+Les scripts nécessitent un accès à la biblitothèque Jquery.
 
 ## Mode d'emploi 
 
-Script entièrement prêt à l'emploi. Il ne reste plus qu'à ajouter dans votre page un container vide avec la classe "ref_container", à ajouter les script en bas de votre body (dans l'ordre dans lequel ils apparaissent dans la page d'exemple) et appeler la feuille de style dans le header.
+Outil entièrement prêt à l'emploi. Il ne reste plus qu'à ajouter dans votre page un container vide avec la classe "ref_container", à ajouter les script en bas de votre body (dans l'ordre dans lequel ils apparaissent dans la page d'exemple) et appeler la feuille de style dans le header.
 
 ## Note pour téléphone et tablette 
 
