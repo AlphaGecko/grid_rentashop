@@ -7,83 +7,6 @@ class CreationOfBlocs {
     arrayCursor2 = 1; 
     arrayCursor3 = 2; 
 
-    /* Modification dynamique des différentes opacités selon l'élément au survol de la souris */ 
-
-    dynamicExit = (blocNumber) => {
-        let descriptionSite1 = $('#number_' + blocNumber + ' .description_site_image_1');
-        let descriptionProjet1 = $('#number_' + blocNumber + ' .description_projet_image_1');
-        let descriptionSite2 = $('#number_' + blocNumber + ' .description_site_image_2'); 
-        let descriptionProjet2 = $('#number_' + blocNumber + ' .description_projet_image_2');
-        let descriptionSite3 = $('#number_' + blocNumber + ' .description_site_image_3');
-        let descriptionProjet3 = $('#number_' + blocNumber + ' .description_projet_image_3');
-
-        return(
-            descriptionSite1.css({"opacity": "0", "z-index": "-5"}),
-            descriptionProjet1.css({"opacity": "0", "z-index": "-5"}),
-            descriptionSite2.css({"opacity": "0", "z-index": "-5"}),
-            descriptionProjet2.css({"opacity": "0", "z-index": "-5"}),
-            descriptionSite3.css({"opacity": "0", "z-index": "-5"}),
-            descriptionProjet3.css({"opacity": "0", "z-index": "-5"})
-        )
-    }
-
-    dynamicEnter1 = (blocNumber) => {
-
-        let descriptionSite1 = $('#number_' + blocNumber + ' .description_site_image_1');
-        let descriptionProjet1 = $('#number_' + blocNumber + ' .description_projet_image_1');
-        let descriptionSite2 = $('#number_' + blocNumber + ' .description_site_image_2'); 
-        let descriptionProjet2 = $('#number_' + blocNumber + ' .description_projet_image_2');
-        let descriptionSite3 = $('#number_' + blocNumber + ' .description_site_image_3');
-        let descriptionProjet3 = $('#number_' + blocNumber + ' .description_projet_image_3');
-
-        return(
-            descriptionSite1.css({"opacity": "1", "z-index": "50"}),
-            descriptionProjet1.css({"opacity": "1", "z-index": "50"}),
-            descriptionSite2.css({"opacity": "0", "z-index": "-5"}),
-            descriptionProjet2.css({"opacity": "0", "z-index": "-5"}),
-            descriptionSite3.css({"opacity": "0", "z-index": "-5"}),
-            descriptionProjet3.css({"opacity": "0", "z-index": "-5"})
-        )
-    }
-
-    dynamicEnter2 = (blocNumber) => {
-
-        let descriptionSite1 = $('#number_' + blocNumber + ' .description_site_image_1');
-        let descriptionProjet1 = $('#number_' + blocNumber + ' .description_projet_image_1');
-        let descriptionSite2 = $('#number_' + blocNumber + ' .description_site_image_2'); 
-        let descriptionProjet2 = $('#number_' + blocNumber + ' .description_projet_image_2');
-        let descriptionSite3 = $('#number_' + blocNumber + ' .description_site_image_3');
-        let descriptionProjet3 = $('#number_' + blocNumber + ' .description_projet_image_3');
-
-        return(
-            descriptionSite1.css({"opacity": "0", "z-index": "-5"}),
-            descriptionProjet1.css({"opacity": "0", "z-index": "-5"}),
-            descriptionSite2.css({"opacity": "1", "z-index": "50"}),
-            descriptionProjet2.css({"opacity": "1", "z-index": "50"}),
-            descriptionSite3.css({"opacity": "0", "z-index": "-5"}),
-            descriptionProjet3.css({"opacity": "0", "z-index": "-5"})
-        )
-    }
-
-    dynamicEnter3 = (blocNumber) => {
-
-        let descriptionSite1 = $('#number_' + blocNumber + ' .description_site_image_1');
-        let descriptionProjet1 = $('#number_' + blocNumber + ' .description_projet_image_1');
-        let descriptionSite2 = $('#number_' + blocNumber + ' .description_site_image_2'); 
-        let descriptionProjet2 = $('#number_' + blocNumber + ' .description_projet_image_2');
-        let descriptionSite3 = $('#number_' + blocNumber + ' .description_site_image_3');
-        let descriptionProjet3 = $('#number_' + blocNumber + ' .description_projet_image_3');
-
-        return(
-            descriptionSite1.css({"opacity": "0", "z-index": "-5"}),
-            descriptionProjet1.css({"opacity": "0", "z-index": "-5"}),
-            descriptionSite2.css({"opacity": "0", "z-index": "-5"}),
-            descriptionProjet2.css({"opacity": "0", "z-index": "-5"}),
-            descriptionSite3.css({"opacity": "1", "z-index": "50"}),
-            descriptionProjet3.css({"opacity": "1", "z-index": "50"})
-        )
-    }
-
     /* Création d'un objet pour chaque bloc de trois cases, stockage des valeurs dans un tableau */ 
 
     blocCreation = (firstCase, secondCase, thirdCase) => {
@@ -117,40 +40,70 @@ class CreationOfBlocs {
     }
 
     /* Styles dynamiques */ 
+    
 
     getAllTheBlocsForStyle = (repeats) => {
-
+        
         let oneBlocForStyle = (numberOfTheBloc, numberOfTheCase) => { return ('#number_' + numberOfTheBloc + ' .' + numberOfTheCase)};
         let oneBlocForStyleImage = (numberOfTheBloc, numberOfTheCase) => { return ('#number_' + numberOfTheBloc + ' .' + numberOfTheCase + ' img')};
 
         document.querySelector(oneBlocForStyle(repeats, "firstCase")).addEventListener("mouseenter", function() {
-            document.querySelector(oneBlocForStyleImage(repeats, "secondCase")).setAttribute('style', 'opacity: 0; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
-            document.querySelector(oneBlocForStyleImage(repeats, "thirdCase")).setAttribute('style', 'opacity: 0; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
-        })  
+
+            document.querySelector(oneBlocForStyleImage(repeats, "secondCase")).setAttribute('style', 'opacity: 0;');
+            document.querySelector(oneBlocForStyle(repeats, "secondCase")).setAttribute('style', ' -webkit-transform: rotateY(180deg);-o-transform: rotateY(180deg); -moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);transform: rotateY(180deg); transition: transform 0.2s linear; -webkit-transition: transform 0.2s linear; -moz-transition: transform 0.2s linear; -o-transition: transform 0.2s linear;')
+
+            document.querySelector(oneBlocForStyleImage(repeats, "thirdCase")).setAttribute('style', 'opacity: 0;');
+            document.querySelector(oneBlocForStyle(repeats, "thirdCase")).setAttribute('style', ' -webkit-transform: rotateY(180deg);-o-transform: rotateY(180deg); -moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);transform: rotateY(180deg); transition: transform 0.2s linear; -webkit-transition: transform 0.2s linear; -moz-transition: transform 0.2s linear; -o-transition: transform 0.2s linear;')
+        })
     
         document.querySelector(oneBlocForStyle(repeats, "firstCase")).addEventListener("mouseleave", function() {
-            document.querySelector(oneBlocForStyleImage(repeats, "secondCase")).setAttribute('style', 'opacity: 1; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
-            document.querySelector(oneBlocForStyleImage(repeats, "thirdCase")).setAttribute('style', 'opacity: 1; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
+
+            document.querySelector(oneBlocForStyleImage(repeats, "secondCase")).setAttribute('style', 'opacity: 1;  transition: opacity 0.2s linear; -webkit-transition:  opacity 0.2s linear; -moz-transition:  opacity 0.2s linear; -o-transition:  opacity 0.2s linear;');
+            document.querySelector(oneBlocForStyle(repeats, "secondCase")).setAttribute('style', '-webkit-transform: rotateY(360deg);-o-transform: rotateY(360deg); -moz-transform: rotateY(360deg);-ms-transform: rotateY(360deg);transform: rotateY(360deg);')
+
+            document.querySelector(oneBlocForStyleImage(repeats, "thirdCase")).setAttribute('style', 'opacity: 1; transition: opacity 0.2s linear; -webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; -o-transition: opacity 0.2s linear;');
+            document.querySelector(oneBlocForStyle(repeats, "thirdCase")).setAttribute('style', '-webkit-transform: rotateY(360deg);-o-transform: rotateY(360deg); -moz-transform: rotateY(360deg);-ms-transform: rotateY(360deg);transform: rotateY(360deg);')
         })  
+
+        //
 
         document.querySelector(oneBlocForStyle(repeats, "secondCase")).addEventListener("mouseenter", function() {
-            document.querySelector(oneBlocForStyleImage(repeats, "firstCase")).setAttribute('style', 'opacity: 0; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
-            document.querySelector(oneBlocForStyleImage(repeats, "thirdCase")).setAttribute('style', 'opacity: 0; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
-        })  
+
+            document.querySelector(oneBlocForStyleImage(repeats, "firstCase")).setAttribute('style', 'opacity: 0;');
+            document.querySelector(oneBlocForStyle(repeats, "firstCase")).setAttribute('style', ' -webkit-transform: rotateY(180deg);-o-transform: rotateY(180deg); -moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);transform: rotateY(180deg); transition: transform 0.2s linear; -webkit-transition: transform 0.2s linear; -moz-transition: transform 0.2s linear; -o-transition: transform 0.2s linear;')
+
+            document.querySelector(oneBlocForStyleImage(repeats, "thirdCase")).setAttribute('style', 'opacity: 0;');
+            document.querySelector(oneBlocForStyle(repeats, "thirdCase")).setAttribute('style', ' -webkit-transform: rotateY(180deg);-o-transform: rotateY(180deg); -moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);transform: rotateY(180deg); transition: transform 0.2s linear; -webkit-transition: transform 0.2s linear; -moz-transition: transform 0.2s linear; -o-transition: transform 0.2s linear;')
+        })
     
         document.querySelector(oneBlocForStyle(repeats, "secondCase")).addEventListener("mouseleave", function() {
-            document.querySelector(oneBlocForStyleImage(repeats, "firstCase")).setAttribute('style', 'opacity: 1; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
-            document.querySelector(oneBlocForStyleImage(repeats, "thirdCase")).setAttribute('style', 'opacity: 1; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
+
+            document.querySelector(oneBlocForStyleImage(repeats, "firstCase")).setAttribute('style', 'opacity: 1;  transition: opacity 0.2s linear; -webkit-transition:  opacity 0.2s linear; -moz-transition:  opacity 0.2s linear; -o-transition:  opacity 0.2s linear;');
+            document.querySelector(oneBlocForStyle(repeats, "firstCase")).setAttribute('style', '-webkit-transform: rotateY(360deg);-o-transform: rotateY(360deg); -moz-transform: rotateY(360deg);-ms-transform: rotateY(360deg);transform: rotateY(360deg);')
+
+            document.querySelector(oneBlocForStyleImage(repeats, "thirdCase")).setAttribute('style', 'opacity: 1; transition: opacity 0.2s linear; -webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; -o-transition: opacity 0.2s linear;');
+            document.querySelector(oneBlocForStyle(repeats, "thirdCase")).setAttribute('style', '-webkit-transform: rotateY(360deg);-o-transform: rotateY(360deg); -moz-transform: rotateY(360deg);-ms-transform: rotateY(360deg);transform: rotateY(360deg);')
         })  
 
+        //
+
         document.querySelector(oneBlocForStyle(repeats, "thirdCase")).addEventListener("mouseenter", function() {
-            document.querySelector(oneBlocForStyleImage(repeats, "secondCase")).setAttribute('style', 'opacity: 0; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
-            document.querySelector(oneBlocForStyleImage(repeats, "firstCase")).setAttribute('style', 'opacity: 0; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
-        })  
+
+            document.querySelector(oneBlocForStyleImage(repeats, "secondCase")).setAttribute('style', 'opacity: 0;');
+            document.querySelector(oneBlocForStyle(repeats, "secondCase")).setAttribute('style', ' -webkit-transform: rotateY(180deg);-o-transform: rotateY(180deg); -moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);transform: rotateY(180deg); transition: transform 0.2s linear; -webkit-transition: transform 0.2s linear; -moz-transition: transform 0.2s linear; -o-transition: transform 0.2s linear;')
+
+            document.querySelector(oneBlocForStyleImage(repeats, "firstCase")).setAttribute('style', 'opacity: 0;');
+            document.querySelector(oneBlocForStyle(repeats, "firstCase")).setAttribute('style', ' -webkit-transform: rotateY(180deg);-o-transform: rotateY(180deg); -moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);transform: rotateY(180deg); transition: transform 0.2s linear; -webkit-transition: transform 0.2s linear; -moz-transition: transform 0.2s linear; -o-transition: transform 0.2s linear;')
+        })
     
         document.querySelector(oneBlocForStyle(repeats, "thirdCase")).addEventListener("mouseleave", function() {
-            document.querySelector(oneBlocForStyleImage(repeats, "secondCase")).setAttribute('style', 'opacity: 1; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
-            document.querySelector(oneBlocForStyleImage(repeats, "firstCase")).setAttribute('style', 'opacity: 1; transition: opacity 0.5s linear; -webkit-transition: opacity 0.5s linear; -moz-transition: opacity 0.5s linear; -o-transition: opacity 0.5s linear;');
+
+            document.querySelector(oneBlocForStyleImage(repeats, "secondCase")).setAttribute('style', 'opacity: 1;  transition: opacity 0.2s linear; -webkit-transition:  opacity 0.2s linear; -moz-transition:  opacity 0.2s linear; -o-transition:  opacity 0.2s linear;');
+            document.querySelector(oneBlocForStyle(repeats, "secondCase")).setAttribute('style', '-webkit-transform: rotateY(360deg);-o-transform: rotateY(360deg); -moz-transform: rotateY(360deg);-ms-transform: rotateY(360deg);transform: rotateY(360deg);')
+
+            document.querySelector(oneBlocForStyleImage(repeats, "firstCase")).setAttribute('style', 'opacity: 1; transition: opacity 0.2s linear; -webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; -o-transition: opacity 0.2s linear;');
+            document.querySelector(oneBlocForStyle(repeats, "firstCase")).setAttribute('style', '-webkit-transform: rotateY(360deg);-o-transform: rotateY(360deg); -moz-transform: rotateY(360deg);-ms-transform: rotateY(360deg);transform: rotateY(360deg);')
         })  
-    } 
+        
+    }
 }
