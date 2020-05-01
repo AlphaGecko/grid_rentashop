@@ -6,6 +6,10 @@ Ce script à été créé par MANSOUR Jean-Loup (AlphaGecko) Pour l'entreprise R
 
 ## Introduction
 
+Cet outil vous permet d'obtenir un résultat de doubles descriptions dynamique sur des lignes de 3 images. 
+
+Exemple : https://www.alpha-gecko.com/grid/
+
 Ce que j'appelle "bloc" correspond à une ligne contenant 3 cases. 
 
 Les "cases" sont donc les images relatives aux partenaires et les différents textes associés. 
