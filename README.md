@@ -20,7 +20,7 @@ Modifiez les styles (fonts, sizes etc...) de préférence avec la feuille de sty
 
 ## Vous pouvez supprimer :
 
-Index.html qui est une page d'exemple, si vous avez compris la logique et le fonctionnement de Grid_Rentashop.
+Index.html qui est une page d'exemple, si vous avez compris la logique et le fonctionnement de Grid_Rentashop.  
 Les images du dossier "images".
 
 ## Structure pour trois cases, dans custom.js
