@@ -56,4 +56,4 @@ Outil entièrement prêt à l'emploi. Il ne reste plus qu'à ajouter dans votre 
 
 ## Note pour téléphone et tablette 
 
-Si le script détecte que vous être sur téléphone ou tablette, tous les styles dynamiques seront supprimés à l'intégration de vos données dans le DOM. Les effets spécifiques au hover n'étant pas compatible avec une navigation sur ces mediums.
+Si le script détecte que vous être sur téléphone ou tablette, tous les styles dynamiques seront supprimés à l'intégration de vos données dans le DOM. Les effets spécifiques au survol des éléments n'étant pas compatible avec une navigation sur ces mediums.
