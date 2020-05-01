@@ -47,6 +47,10 @@ case3 = {
 
 Créez toujours les cases trois par trois. Vous pouvez ajouter autants de blocs que vous le souhaitez, le script s'adaptera.
 
-## NOTE 
+## Mode d'emploi 
 
 Script entièrement prêt à l'emploi. Il ne reste plus qu'à ajouter dans votre page un container vide avec la classe "ref_container", à ajouter les script en bas de votre body (dans l'ordre dans lequel ils apparaissent dans la page d'exemple) et appeler la feuille de style dans le header.
+
+## Note pour téléphone et tablette 
+
+Si le script détecte que vous être sur téléphone ou tablette, tous les styles dynamiques seront supprimés à l'intégration de vos données dans le DOM. Les effets spécifiques au hover n'étant pas compatible avec une navigation sur ces mediums.
