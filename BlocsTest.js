@@ -1,11 +1,13 @@
 class BlocsTest  {
 
-    gridTest = "Tests en cours"
-    testError
-    testGrid = []
-    addToGrid = 1
-    modulo3Test
-    imageTest
+    constructor() {
+        this.gridTest = "Tests en cours";
+        this.testError;
+        this.testGrid = [];
+        this.addToGrid = 1;
+        this.modulo3Test;
+        this.imageTest;
+    }
 
     initializeTests() {
 

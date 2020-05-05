@@ -2,6 +2,31 @@
 /***** Lancement du script selon les données que vous avez saisies dans custom.js. Enjoy ;) *****/
 /************************************************************************************************/
 
+/* Script pour ne plus avoir de bug avec les vieux navigateurs, qui ne prennent pas en charge "prepend" */ 
+
+(function (arr) {
+    arr.forEach(function (item) {
+      if (item.hasOwnProperty('prepend')) {
+        return;
+      }
+      Object.defineProperty(item, 'prepend', {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        value: function prepend() {
+          var argArr = Array.prototype.slice.call(arguments),
+            docFrag = document.createDocumentFragment();
+  
+          argArr.forEach(function (argItem) {
+            var isNode = argItem instanceof Node;
+            docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
+          });
+  
+          this.insertBefore(docFrag, this.firstChild);
+        }
+      });
+    });
+  })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
 
 /* insère dynamiquement le nombre de blocs dans le tableau en fonction des entrées de l'utilisateur */
 
@@ -35,7 +60,7 @@ if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobi
 
      /* Modification dynamique des différentes opacités selon l'élément au survol de la souris */ 
 
-     dynamicExit = (blocNumber) => {
+     function dynamicExit(blocNumber) {
         let descriptionSite1 = $('#number_' + blocNumber + ' .description_site_image_1');
         let descriptionProjet1 = $('#number_' + blocNumber + ' .description_projet_image_1');
         let descriptionSite2 = $('#number_' + blocNumber + ' .description_site_image_2'); 
@@ -53,7 +78,7 @@ if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobi
         )
     }
 
-    dynamicEnter1 = (blocNumber) => {
+    function dynamicEnter1(blocNumber) {
 
         let descriptionSite1 = $('#number_' + blocNumber + ' .description_site_image_1');
         let descriptionProjet1 = $('#number_' + blocNumber + ' .description_projet_image_1');
@@ -72,7 +97,7 @@ if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobi
         )
     }
 
-    dynamicEnter2 = (blocNumber) => {
+    function dynamicEnter2(blocNumber) {
 
         let descriptionSite1 = $('#number_' + blocNumber + ' .description_site_image_1');
         let descriptionProjet1 = $('#number_' + blocNumber + ' .description_projet_image_1');
@@ -91,7 +116,7 @@ if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobi
         )
     }
 
-    dynamicEnter3 = (blocNumber) => {
+    function dynamicEnter3(blocNumber) {
 
         let descriptionSite1 = $('#number_' + blocNumber + ' .description_site_image_1');
         let descriptionProjet1 = $('#number_' + blocNumber + ' .description_projet_image_1');

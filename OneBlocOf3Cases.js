@@ -26,7 +26,7 @@ class OneBlocOf3Cases  {
         this.numberOfTheBloc = numberOfTheBloc;
     }
 
-    addOneBlocToDOM = () => {
+    addOneBlocToDOM() {
         return (
             `<div class="oneBloc" id="number_${this.numberOfTheBloc}">
                 <div class="firstCase">
