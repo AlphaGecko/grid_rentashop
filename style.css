@@ -119,6 +119,7 @@
     .firstCase, .secondCase, .thirdCase{
         width: 25%;
         border: 3px solid black;
+        z-index: 60;
     }
 }
 
