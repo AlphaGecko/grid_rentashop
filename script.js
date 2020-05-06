@@ -12,22 +12,24 @@ creationOfBlocs.AddDatasToArray();
 let testingUserEntries = new BlocsTest();
 testingUserEntries.initializeTests(); 
 
-/* Si les tests sont bons, intégration des blocs HTML du tableau au DOM */ 
+/* Si les tests sont bons, intégration des blocs HTML du tableau au DOM selon si l'utilisateur utiliseur IE ou un autre navigateur*/ 
 
 if (testingUserEntries.gridTest === "ok") {
-    console.log("Fin des tests. Ajout des éléments au DOM");
-    creationOfBlocs.arrayBlocStorage.forEach(bloc => {
-        $('.ref_container').append(bloc);
-    });
+  console.log("Fin des tests. Ajout des éléments au DOM");
+  creationOfBlocs.arrayBlocStorage.forEach(bloc => {
+    console.log("ok");
+      $('.ref_container').append(bloc);
+  });
 } else {
     console.log("Fin des tests. Erreur");
     $('.ref_container').append(testingUserEntries.testError);
 }
 
+
 /* Ajout des styles dynamiques au DOM */
 
 for (let i = 0; i < creationOfBlocs.howManyBlocsHasBeenCreated; i++) {
-    creationOfBlocs.AddStyleEventsToBlocs(i);
+  creationOfBlocs.AddStyleEventsToBlocs(i);
 }     
 
 /* suppression des liens pour les téléphones et mobiles pour prévenir les bugs et améliorer l'UX */ 

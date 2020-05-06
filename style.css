@@ -16,42 +16,34 @@
     margin-bottom: 20px;
 }
 
+.oneBloc img, .oneBloc div, .oneBloc span {
+    transition: opacity 0.2s linear;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+}
+
 .firstCase {
     text-align: center;
-    width: 33.333%; 
+    width: 30%; 
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    border-top: 3px solid black; 
-    border-right: 1.5px solid black;
-    border-bottom: 3px solid black; 
-    border-left: 3px solid black;
     z-index: 60;
 }
 
 .secondCase {
     text-align: center;
-    width: 33.333%; 
+    width: 30%; 
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    border-top: 3px solid black; 
-    border-right: 1.5px solid black;
-    border-bottom: 3px solid black; 
-    border-left: 1.5px solid black;
     z-index: 60;
 }
 
 .thirdCase {
     text-align: center;
-    width: 33.333%; 
+    width: 30%; 
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    border-top: 3px solid black; 
-    border-right:3px solid black;
-    border-bottom: 3px solid black; 
-    border-left: 1.5px solid black;
     z-index: 60;
 }
 
@@ -72,9 +64,12 @@
 .firstCase img, .secondCase img, .thirdCase img {
     width: 100%; 
     height: auto; 
-    border-radius: 10px;
-    opacity: 0.9;
+    opacity: 0.8;
     z-index: 50;
+}
+
+.firstCase img:hover, .secondCase img:hover, .thirdCase img:hover {
+    opacity: 1 !important;
 }
 
 
@@ -96,11 +91,6 @@
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-
-    transition: opacity 0.2s linear;
-    -webkit-transition: opacity 0.2s linear;
-    -moz-transition: opacity 0.2s linear;
-    -o-transition: opacity 0.2s linear;
 }
 
 .description_site_image_1, .description_site_image_2, .description_site_image_3, .description_projet_image_1, .description_projet_image_2, .description_projet_image_3 {
