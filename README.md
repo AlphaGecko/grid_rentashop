@@ -63,4 +63,4 @@ De préférence, les images doivent être au format carré.
 
 ## Note pour téléphone et tablette 
 
-Si le script détecte que vous être sur téléphone ou tablette, tous les styles dynamiques seront supprimés à l'intégration de vos données dans le DOM. Les effets spécifiques au survol des éléments n'étant pas compatible avec une navigation sur ces mediums.
+Si le script détecte que vous être sur téléphone ou tablette, tous les liens sont supprimés à l'intégration de vos données dans le DOM, étant donné que le "click" remplace le survol sur les appareils tactiles.
