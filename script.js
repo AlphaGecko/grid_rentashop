@@ -12,19 +12,19 @@ creationOfBlocs.AddDatasToArray();
 let testingUserEntries = new BlocsTest();
 testingUserEntries.initializeTests(); 
 
-/* Si les tests sont bons, intégration des blocs HTML du tableau au DOM selon si l'utilisateur utiliseur IE ou un autre navigateur*/ 
+/* Tests */ 
 
 if (testingUserEntries.gridTest === "ok") {
-  console.log("Fin des tests. Ajout des éléments au DOM");
-  creationOfBlocs.arrayBlocStorage.forEach(bloc => {
-    console.log("ok");
-      $('.ref_container').append(bloc);
-  });
+  console.log("Tous les tests sont bons.");
 } else {
-    console.log("Fin des tests. Erreur");
-    $('.ref_container').append(testingUserEntries.testError);
+  console.log(testingUserEntries.testError);
 }
 
+/* intégration des blocs HTML du tableau au DOM selon si l'utilisateur utiliseur IE ou un autre navigateur */
+
+creationOfBlocs.arrayBlocStorage.forEach(bloc => {
+  $('.ref_container').append(bloc);
+});
 
 /* Ajout des styles dynamiques au DOM */
 

@@ -24,7 +24,7 @@ class BlocsTest  {
         
         const regex_image = (/\.(gif|jpe?g|tiff|png|webp|bmp)$/i)
         
-        for (const [key, value, index] of Object.entries(allCases)) {
+        for (const [key, value] of Object.entries(allCases)) {
             if (value["lien_image"] === "" || value['lien_image'] === undefined || value['lien_image'] === null) {
                 this.imageTest = "Erreur"; 
                 this.testError = "<strong>il doit obligatoirement y avoir une image par case, même si elle est vide.</strong>"; 
