@@ -36,8 +36,6 @@ class OneBlocOf3Cases  {
                             <img 
                                 src=${this.lien_image_1} 
                                 alt=${this.alt_1} 
-                                onmouseenter="dynamicEnter1(${this.numberOfTheBloc})" 
-                                onmouseleave="dynamicExit(${this.numberOfTheBloc})"
                             "/>
                             <span class="dynamic_background"></span>
                             <span class="description_image description_site_image_2">${this.description_site_1}</span>
@@ -51,8 +49,6 @@ class OneBlocOf3Cases  {
                             <img 
                                 src=${this.lien_image_2} 
                                 alt=${this.alt_2} 
-                                onmouseenter="dynamicEnter2(${this.numberOfTheBloc})" 
-                                onmouseleave="dynamicExit(${this.numberOfTheBloc})" 
                             />
                             <span class="dynamic_background"></span>
                             <span class="description_image description_site_image_1">${this.description_site_2}</span>
@@ -66,8 +62,6 @@ class OneBlocOf3Cases  {
                             <img 
                                 src=${this.lien_image_3} 
                                 alt=${this.alt_3} 
-                                onmouseenter="dynamicEnter3(${this.numberOfTheBloc})" 
-                                onmouseleave="dynamicExit(${this.numberOfTheBloc})" 
                             />
                             <span class="dynamic_background"></span>
                             <span class="description_image description_projet_image_1">${this.description_site_3}</span>

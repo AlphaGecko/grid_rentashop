@@ -2,32 +2,6 @@
 /***** Lancement du script selon les données que vous avez saisies dans custom.js. Enjoy ;) *****/
 /************************************************************************************************/
 
-/* Script pour ne plus avoir de bug avec les vieux navigateurs, qui ne prennent pas en charge "prepend" */ 
-
-(function (arr) {
-    arr.forEach(function (item) {
-      if (item.hasOwnProperty('prepend')) {
-        return;
-      }
-      Object.defineProperty(item, 'prepend', {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        value: function prepend() {
-          var argArr = Array.prototype.slice.call(arguments),
-            docFrag = document.createDocumentFragment();
-  
-          argArr.forEach(function (argItem) {
-            var isNode = argItem instanceof Node;
-            docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
-          });
-  
-          this.insertBefore(docFrag, this.firstChild);
-        }
-      });
-    });
-  })([Element.prototype, Document.prototype, DocumentFragment.prototype]);
-
 /* insère dynamiquement le nombre de blocs dans le tableau en fonction des entrées de l'utilisateur */
 
 let creationOfBlocs = new CreationOfBlocs();
@@ -56,3 +30,15 @@ for (let i = 0; i < creationOfBlocs.howManyBlocsHasBeenCreated; i++) {
     creationOfBlocs.AddStyleEventsToBlocs(i);
 }     
 
+/* suppression des liens pour les téléphones et mobiles pour prévenir les bugs et améliorer l'UX */ 
+
+let isItADevice; 
+
+if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini)/gi)) {
+    isItADevice = true;
+}
+
+if (isItADevice === true) {
+  $('.oneBloc a').attr('href', '#'); 
+  $('.oneBloc a').attr('target', '_self');
+}
