@@ -42,6 +42,5 @@ if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobi
 }
 
 if (isItADevice === true) {
-  $('.oneBloc a').attr('href', '#');
-  $('.oneBloc a').attr('target', '_self');
+  $('.oneBloc a').removeAttr('href');
 }

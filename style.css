@@ -12,8 +12,10 @@
 .oneBloc {
     width: 100%; 
     display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center; 
+    align-content: center; 
 }
 
 .oneBloc img, .oneBloc div, .oneBloc span {
@@ -64,14 +66,8 @@
 .firstCase img, .secondCase img, .thirdCase img {
     width: 100%; 
     height: auto; 
-    opacity: 0.8;
     z-index: 50;
 }
-
-.firstCase img:hover, .secondCase img:hover, .thirdCase img:hover {
-    opacity: 1 !important;
-}
-
 
 
 
@@ -106,36 +102,16 @@
 
 @media screen and (max-width: 1280px) {
 
-    .firstCase, .secondCase, .thirdCase{
+    .firstCase, .secondCase, .thirdCase {
         width: 25%;
-        border: 3px solid black;
     }
-}
 
-@media screen and (max-width: 620px) {
-
-    .firstCase, .secondCase, .thirdCase{
-        width: 20%;
-        border: 3px solid black;
-    }
 }
 
 
 @media screen and (max-width: 450px) and (orientation: portrait) {
     
-    .oneBloc {
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        align-content: center; 
-    }
-
     .firstCase, .secondCase, .thirdCase {
         width: 50%; 
-        border: 3px solid black;
-    }
-
-    .firstCase, .secondCase {
-        margin-bottom: 20px;
     }
 }

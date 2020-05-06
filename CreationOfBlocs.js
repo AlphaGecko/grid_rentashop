@@ -94,8 +94,8 @@ var CreationOfBlocs = /*#__PURE__*/function () {
         });
       });
       $(oneBlocForStyle(repeats, "firstCase")).mouseleave(function () {
-        $(oneBlocForStyleImage(repeats, "secondCase")).attr('style', 'opacity: 0.7;');
-        $(oneBlocForStyleImage(repeats, "thirdCase")).attr('style', 'opacity: 0.7;');
+        $(oneBlocForStyleImage(repeats, "secondCase")).attr('style', 'opacity: 1;');
+        $(oneBlocForStyleImage(repeats, "thirdCase")).attr('style', 'opacity: 1;');
         descriptionSite1.css({
           "opacity": "0",
           "z-index": "-5"
@@ -156,8 +156,8 @@ var CreationOfBlocs = /*#__PURE__*/function () {
         });
       });
       $(oneBlocForStyle(repeats, "secondCase")).mouseleave(function () {
-        $(oneBlocForStyleImage(repeats, "firstCase")).attr('style', 'opacity: 0.7;');
-        $(oneBlocForStyleImage(repeats, "thirdCase")).attr('style', 'opacity: 0.7;');
+        $(oneBlocForStyleImage(repeats, "firstCase")).attr('style', 'opacity: 1;');
+        $(oneBlocForStyleImage(repeats, "thirdCase")).attr('style', 'opacity: 1;');
         descriptionSite1.css({
           "opacity": "0",
           "z-index": "-5"
@@ -218,8 +218,8 @@ var CreationOfBlocs = /*#__PURE__*/function () {
         });
       });
       $(oneBlocForStyle(repeats, "thirdCase")).mouseleave(function () {
-        $(oneBlocForStyleImage(repeats, "firstCase")).attr('style', 'opacity: 0.7;');
-        $(oneBlocForStyleImage(repeats, "secondCase")).attr('style', 'opacity: 0.7;');
+        $(oneBlocForStyleImage(repeats, "firstCase")).attr('style', 'opacity: 1;');
+        $(oneBlocForStyleImage(repeats, "secondCase")).attr('style', 'opacity: 1;');
         descriptionSite1.css({
           "opacity": "0",
           "z-index": "-5"
