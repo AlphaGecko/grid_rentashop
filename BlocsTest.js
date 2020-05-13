@@ -73,3 +73,14 @@ var BlocsTest = /*#__PURE__*/function () {
 
   return BlocsTest;
 }();
+
+/* Lancement des tests */
+
+// var testingUserEntries = new BlocsTest();
+// testingUserEntries.initializeTests();
+
+// if (testingUserEntries.gridTest === "ok") {
+//   console.log("Tous les tests sont bons.");
+// } else {
+//   console.log(testingUserEntries.testError);
+// }

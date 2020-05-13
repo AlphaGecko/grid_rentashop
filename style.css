@@ -92,26 +92,3 @@
 .description_site_image_1, .description_site_image_2, .description_site_image_3, .description_projet_image_1, .description_projet_image_2, .description_projet_image_3 {
     opacity: 0;
 }
-
-
-
-
-
-/* media queries */ 
-
-
-@media screen and (max-width: 1280px) {
-
-    .firstCase, .secondCase, .thirdCase {
-        width: 25%;
-    }
-
-}
-
-
-@media screen and (max-width: 450px) and (orientation: portrait) {
-    
-    .firstCase, .secondCase, .thirdCase {
-        width: 50%; 
-    }
-}

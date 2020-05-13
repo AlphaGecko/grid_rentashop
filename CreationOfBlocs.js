@@ -25,10 +25,33 @@ var CreationOfBlocs = /*#__PURE__*/function () {
     key: "blocCreation",
     value: function blocCreation(firstCase, secondCase, thirdCase) {
       var virtualBloc = new OneBlocOf3Cases(firstCase["lien_image"], firstCase["lien_partenaire"], firstCase["alt"], firstCase["description_1"], firstCase["description_2"], secondCase["lien_image"], secondCase["lien_partenaire"], secondCase["alt"], secondCase["description_1"], secondCase["description_2"], thirdCase["lien_image"], thirdCase["lien_partenaire"], thirdCase["alt"], thirdCase["description_1"], thirdCase["description_2"], this.howManyBlocsHasBeenCreated);
-      var blocContent = virtualBloc.addOneBlocToDOM();
+      var isItADevice;
+      var screenWidth = $(window).width();
+      var windowWidth; 
+      var blocContent;
+
+      if (screenWidth <= 920) {
+        windowWidth = "small";
+      } else {
+        windowWidth = "big"
+      };
+
+      if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini)/gi) || windowWidth === "small") {
+        isItADevice = true;
+      } else {
+        isItADevice = false;
+      };
+
+      if (isItADevice === true) {
+        blocContent = virtualBloc.addOneDeviceBlocToDOM();
+      } else {
+        blocContent = virtualBloc.addOneBlocToDOM();
+      };
+
       this.arrayBlocStorage[this.howManyBlocsHasBeenCreated] = blocContent;
       this.howManyBlocsHasBeenCreated++;
     }
+    
     /* Ajout les éléments dans un tableau */
 
   }, {
