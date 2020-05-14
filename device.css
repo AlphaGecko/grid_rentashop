@@ -1,46 +1,64 @@
 
-.oneBloc_device {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* suppression du style de la version écran  */
 
-.oneBloc_device p {
+.oneImage_device p {
     opacity: inherit;
     text-align: center;
 }
 
-.oneBloc_device img {
-    width: 50vw; 
-    margin-left: auto;  
-    margin-right: auto; 
+.ref_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw; 
+    margin-left: auto; 
+    margin-right: auto;
+    justify-content: space-around;
+}
+
+.oneImage_device {
+    width: 28vw; 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 0.125em solid black;
+    margin-top: 2em;
+}
+
+.oneImage_device img {
+    width: 100%; 
+    height: auto;
 }
 
 .description_image_device {
-    width: 80vw;
-    margin-left: auto;  
-    margin-right: auto;
+    width: 26vw;
+    padding: 1vw;
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 1024px) {
 
-    .oneBloc_device { 
-        display: flex;
-        flex-direction: column;
+    .ref_container {
+        width: 80vw; 
     }
 
-    .oneBloc_device img {
-        width: 80%; 
-        margin-left: auto;  
-        margin-right: auto; 
+    .oneImage_device {
+        width: 35vw; 
+    }
+
+    .description_image_device {
+        width: 33vw;
+        padding: 1vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .oneImage_device {
+        width: 80vw; 
     }
     
     .description_image_device {
-        width: 90%;
-        margin-left: auto;  
-        margin-right: auto;
+        width: 78vw;
+        padding: 1vw;
     }
 }
 
