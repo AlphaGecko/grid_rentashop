@@ -26,12 +26,11 @@ var CreationOfBlocs = /*#__PURE__*/function () {
     key: "blocCreation",
     value: function blocCreation(firstCase, secondCase, thirdCase) {
       var virtualBloc = new OneBlocOf3Cases(firstCase["lien_image"], firstCase["lien_partenaire"], firstCase["alt"], firstCase["description_1"], firstCase["description_2"], secondCase["lien_image"], secondCase["lien_partenaire"], secondCase["alt"], secondCase["description_1"], secondCase["description_2"], thirdCase["lien_image"], thirdCase["lien_partenaire"], thirdCase["alt"], thirdCase["description_1"], thirdCase["description_2"], this.howManyBlocsHasBeenCreated);
-
-      console.log("nouvelle instanciation");
-
       if (deviceDetection === true) {
+        $(".ref_container").addClass("device");
         var blocContent = virtualBloc.addOneDeviceBlocToDOM();
       } else if (deviceDetection === false) {
+        $(".ref_container").removeClass("device");
         var blocContent = virtualBloc.addOneBlocToDOM();
       };
 

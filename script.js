@@ -42,14 +42,37 @@ for (var i = 0; i < creationOfBlocs.howManyBlocsHasBeenCreated; i++) {
   creationOfBlocs.AddStyleEventsToBlocs(i);
 }
 
+/* debug des ancres sur IE */ 
+
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf('MSIE ');
+var trident = ua.indexOf('Trident/');
+
+if (msie > 0 || trident > 0) {
+    console.log('IE detecté, remise en forme du document');
+    var imageWidth = $("body > div > div:nth-child(1) > a > p > img").css("width");
+    $(".oneImage_device > a").css("height", imageWidth);
+}
+
+
 /* Detection dynamique des modifications de tailles d'écran */
 
 $(window).resize(function () {
 
+    /* debug des ancres sur IE */ 
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf('MSIE ');
+    var trident = ua.indexOf('Trident/');
+
+    if (msie > 0 || trident > 0) {
+        console.log('IE detecté, remise en forme du document');
+        var imageWidth = $("body > div > div:nth-child(1) > a > p > img").css("width");
+        $(".oneImage_device > a").css("height", imageWidth);
+    }
+
     var newScreenWidth = ""; 
     var newWindowWidth = ""; 
-
-    console.log("windowWidth = " + windowWidth + " et deviceDetection = " + deviceDetection);
 
     newScreenWidth = $(window).width();
 
@@ -67,7 +90,6 @@ $(window).resize(function () {
 
     if (windowWidth !== newWindowWidth) {
 
-        console.log("La fonction à detecté un changement. windowWidth = " + windowWidth + ", newWindowWidth = " + newWindowWidth + " et deviceDetection = " + deviceDetection);
         $('.oneBloc').remove();
         $('.oneImage_device').remove();
         var creationOfBlocs = new CreationOfBlocs();
@@ -81,7 +103,5 @@ $(window).resize(function () {
 
         windowWidth = newWindowWidth;
         screenWidth = newScreenWidth;
-
-        console.log("remise des valeurs à 0. windowWidth = " + windowWidth + ", newWindowWidth = " + newWindowWidth + " et deviceDetection = " + deviceDetection);
     } 
 });

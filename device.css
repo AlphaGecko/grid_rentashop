@@ -1,64 +1,82 @@
-
 /* suppression du style de la version écran  */
 
-.oneImage_device p {
+.ref_container.device .oneImage_device p {
     opacity: inherit;
     text-align: center;
 }
 
-.ref_container {
+.ref_container.device {
     display: flex;
     flex-wrap: wrap;
-    width: 90vw; 
+    width: 90%; 
     margin-left: auto; 
     margin-right: auto;
     justify-content: space-around;
 }
 
-.oneImage_device {
+.ref_container.device .oneImage_device {
     width: 28vw; 
     display: flex;
     flex-direction: column;
-    text-align: center;
     border: 0.125em solid black;
     margin-top: 2em;
 }
 
-.oneImage_device img {
+.ref_container.device .oneImage_device img {
     width: 100%; 
     height: auto;
+    z-index: -10;
 }
 
-.description_image_device {
+.ref_container.device .description_image_device {
     width: 26vw;
     padding: 1vw;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.ref_container.device .description_projet_image_1, .description_projet_image_2, .description_projet_image_3  {
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1024px) {
 
-    .ref_container {
-        width: 80vw; 
+    .ref_container.device {
+        width: 85vw; 
     }
 
-    .oneImage_device {
-        width: 35vw; 
+    .ref_container.device .oneImage_device {
+        width: 40vw; 
     }
 
-    .description_image_device {
-        width: 33vw;
+    .ref_container.device .description_image_device {
+        width: 38vw;
         padding: 1vw;
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
 
-    .oneImage_device {
+    .ref_container.device .oneImage_device {
+        width: 60vw; 
+    }
+    
+    .ref_container.device .description_image_device {
+        width: 58vw;
+        padding: 1vw;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .ref_container.device .oneImage_device {
         width: 80vw; 
     }
     
-    .description_image_device {
+    .ref_container.device .description_image_device {
         width: 78vw;
         padding: 1vw;
     }
 }
+
 
