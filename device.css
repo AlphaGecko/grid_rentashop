@@ -1,0 +1,46 @@
+
+.oneBloc_device {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.oneBloc_device p {
+    opacity: inherit;
+    text-align: center;
+}
+
+.oneBloc_device img {
+    width: 50vw; 
+    margin-left: auto;  
+    margin-right: auto; 
+}
+
+.description_image_device {
+    width: 80vw;
+    margin-left: auto;  
+    margin-right: auto;
+}
+
+@media screen and (max-width: 680px) {
+
+    .oneBloc_device { 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .oneBloc_device img {
+        width: 80%; 
+        margin-left: auto;  
+        margin-right: auto; 
+    }
+    
+    .description_image_device {
+        width: 90%;
+        margin-left: auto;  
+        margin-right: auto;
+    }
+}
+
