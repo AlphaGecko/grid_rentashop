@@ -36,8 +36,50 @@ var OneBlocOf3Cases = /*#__PURE__*/function () {
   }, {
     key: "addOneDeviceBlocToDOM",
     value: function addOneDeviceBlocToDOM() {
-      return "<div class=\"oneImage_device\">\n                <a href=".concat(this.url_partenaire_1, " target=\"_blank\" rel=\"noopener noreferrer nofollow\">\n                    <p>\n                      <img src=").concat(this.lien_image_1, " alt=").concat(this.alt_1, "/>\n                    </p>\n                </a>\n                <p class=\"description_image_device description_site_image_1\">").concat(this.description_site_2, "</p>\n                <p class=\"description_image_device description_projet_image_1\">").concat(this.description_site_3, "</p>\n              </div>\n\n              <div class=\"oneImage_device\">\n                <a href=").concat(this.url_partenaire_2, " target=\"_blank\" rel=\"noopener noreferrer nofollow\">\n                  <p>\n                    <img src=").concat(this.lien_image_2, " alt=").concat(this.alt_2, "/>\n                  </p>\n                </a>\n                <p class=\"description_image_device description_site_image_2\">").concat(this.description_site_1, "</p>\n                <p class=\"description_image_device description_projet_image_2\">").concat(this.description_projet_3, "</p>\n              </div>\n\n              <div class=\"oneImage_device\">\n                <a href=").concat(this.url_partenaire_3, " target=\"_blank\" rel=\"noopener noreferrer nofollow\">\n                  <p>\n                    <img src=").concat(this.lien_image_3, " alt=").concat(this.alt_3, "/>\n                  </p>\n                </a>\n                <p class=\"description_image_device description_site_image_3\">").concat(this.description_projet_1, "</p>\n                <p class=\"description_image_device description_projet_image_3\">").concat(this.description_projet_2, "</p>\n              </div>");
-    }
+      return `
+        <div class="one_bloc_device">
+          <div class="draggable_container">
+            <div class="draggable_content">
+              <div class="oneImage_device">
+                <a href=${this.url_partenaire_1} target="_blank" rel="noopener noreferrer nofollow">
+                    <p>
+                      <img src=${this.lien_image_1} alt=${this.alt_1}/>
+                    </p>
+                </a>
+              </div>
+              <div class="oneText_device">
+                <p class="description_image_device description_site_image_1">${this.description_site_2}</p>
+                <p class="description_image_device description_projet_image_1">${this.description_site_3}</p>
+              </div>
+
+              <div class="oneImage_device">
+                <a href=${this.url_partenaire_2} target="_blank" rel="noopener noreferrer nofollow">
+                  <p>
+                    <img src=${this.lien_image_2} alt=${this.alt_2}/>
+                  </p>
+                </a>
+              </div>
+              <div class="oneText_device">
+                <p class="description_image_device description_site_image_2">${this.description_site_1}</p>
+                <p class="description_image_device description_projet_image_2">${this.description_projet_3}</p>
+              </div>
+
+              <div class="oneImage_device">
+                <a href=${this.url_partenaire_3} target="_blank" rel="noopener noreferrer nofollow">
+                  <p>
+                    <img src=${this.lien_image_3} alt=${this.alt_3}/>
+                  </p>
+                </a>
+              </div>
+              <div class="oneText_device">
+                <p class="description_image_device description_site_image_3">${this.description_projet_1}</p>
+                <p class="description_image_device description_projet_image_3">${this.description_projet_2}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        `
+      }
   }]);
 
   return OneBlocOf3Cases;

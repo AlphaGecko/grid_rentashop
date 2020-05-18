@@ -6,77 +6,50 @@
 }
 
 .ref_container.device {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%; 
-    margin-left: auto; 
-    margin-right: auto;
-    justify-content: space-around;
+    position: relative;
+    max-width: inherit;
+    padding: inherit;
+    margin-left: inherit; 
+    margin-right: inherit;
 }
 
-.ref_container.device .oneImage_device {
-    width: 28vw; 
-    display: flex;
-    flex-direction: column;
-    border: 0.125em solid black;
-    margin-top: 2em;
+.one_bloc_device {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
 }
 
-.ref_container.device .oneImage_device img {
+.draggable_container {
+    position: relative;
+    width: 400vw;
+    left: -160vw;
+    border: 2px solid blue;
+}
+
+.draggable_content {
+    display: flex;
+    width: 240vw;
+    left: 160vw;
+    cursor: pointer;
+}
+
+.oneImage_device {
+    width: 40vw;
+    border: 1px solid red;
+}
+
+.oneText_device {
+    width: 40vw;
+    border: 1px solid red;
+}
+
+.oneText_device p {
+    color: black;
+    opacity: 1;
+}
+
+.oneImage_device img {
     width: 100%; 
     height: auto;
-    z-index: -10;
 }
-
-.ref_container.device .description_image_device {
-    width: 26vw;
-    padding: 1vw;
-    margin-left: auto; 
-    margin-right: auto;
-}
-
-.ref_container.device .description_projet_image_1, .description_projet_image_2, .description_projet_image_3  {
-    margin-bottom: 20px;
-}
-
-@media screen and (max-width: 1024px) {
-
-    .ref_container.device {
-        width: 85vw; 
-    }
-
-    .ref_container.device .oneImage_device {
-        width: 40vw; 
-    }
-
-    .ref_container.device .description_image_device {
-        width: 38vw;
-        padding: 1vw;
-    }
-}
-
-@media screen and (max-width: 640px) {
-
-    .ref_container.device .oneImage_device {
-        width: 60vw; 
-    }
-    
-    .ref_container.device .description_image_device {
-        width: 58vw;
-        padding: 1vw;
-    }
-}
-
-@media screen and (max-width: 420px) {
-
-    .ref_container.device .oneImage_device {
-        width: 80vw; 
-    }
-    
-    .ref_container.device .description_image_device {
-        width: 78vw;
-        padding: 1vw;
-    }
-}
-
 

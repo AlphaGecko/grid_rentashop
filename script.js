@@ -54,6 +54,9 @@ if (msie > 0 || trident > 0) {
     $(".oneImage_device > a").css("height", imageWidth);
 }
 
+/* rend le contenu draggable sur téléphone */ 
+
+$(".draggable_content").draggable({axis: "x", containment: ".draggable_container"});
 
 /* Detection dynamique des modifications de tailles d'écran */
 
@@ -91,7 +94,7 @@ $(window).resize(function () {
     if (windowWidth !== newWindowWidth) {
 
         $('.oneBloc').remove();
-        $('.oneImage_device').remove();
+        $('.one_bloc_device').remove();
         var creationOfBlocs = new CreationOfBlocs();
         creationOfBlocs.AddDatasToArray();
         creationOfBlocs.arrayBlocStorage.forEach(function (bloc) {
@@ -103,5 +106,7 @@ $(window).resize(function () {
 
         windowWidth = newWindowWidth;
         screenWidth = newScreenWidth;
+
+        $(".draggable_content").draggable({axis: "x", containment: ".draggable_container"});
     } 
 });
