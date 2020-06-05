@@ -12,17 +12,15 @@ var deviceDetection = "";
 
 /* Valeurs initiales de l'application */
 
-screenWidth = $(window).width();
+screenWidth = $(document).width();
 
-if (screenWidth < 1280 && screenWidth >= 620) {
+if (screenWidth < 1280) {
     windowWidth = "small";
-} else if (screenWidth < 620) {
-    windowWidth = "Xsmall";
 } else {
     windowWidth = "big";
 };
 
-if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini)/gi) || windowWidth === "small" || windowWidth === "Xsmall") {
+if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini)/gi) || windowWidth === "small") {
     deviceDetection = true;
 } else {
     deviceDetection = false;
@@ -84,26 +82,26 @@ $(window).resize(function () {
 
     var newScreenWidth = "";
     var newWindowWidth = "";
-    newScreenWidth = $(window).width();
+    newScreenWidth = $(document).width();
 
-    if (newScreenWidth < 1280 && newScreenWidth >= 620) {
+    console.log(newScreenWidth)
+
+    if (newScreenWidth < 1280) {
         newWindowWidth = "small";
-    } else if (newScreenWidth < 620) {
-        newWindowWidth = "Xsmall";
     } else {
         newWindowWidth = "big";
     };
     
 
-    if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini)/gi) || newWindowWidth === "small" || newWindowWidth === "Xsmall") {
+    if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini)/gi) || newWindowWidth === "small") {
         deviceDetection = true;
     } else {
         deviceDetection = false;
     };
 
-    if (newWindowWidth === "small" && deviceDetection === true) {
+    if (newWindowWidth === "small" && newScreenWidth > 620) {
         $(".draggable_content").css("left", "200vw"); 
-    } else if (newWindowWidth === "Xsmall" && deviceDetection === true) {
+    } else if (newWindowWidth === "small" && newScreenWidth <= 620) {
         $(".draggable_content").css("left", "500vw");
     };
 

@@ -29,7 +29,6 @@
 .draggable_content {
     display: flex;
     align-items: center;
-    justify-content: center;
     align-content: center;
     width: 300vw;
     left: 200vw;
@@ -40,9 +39,14 @@
     width: 100vw;
 }
 
+.oneImage_device p {
+    margin: 0 0; 
+    padding: 0 0;
+}
+
 .oneText_device {
     width: 96vw;
-    padding: 2vw;
+    padding: 0 2vw 0 2vw;
     height: inherit;
     text-align: left;
 }
@@ -57,7 +61,7 @@
     height: auto;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 637px) {
 
     .draggable_container {
         position: relative;
@@ -78,8 +82,7 @@
     
     .oneText_device {
         width: 100vw;
-        width: 96vw;
-        padding: 2vw;
+        padding: 0 2vw 0 2vw;
         text-align: left;
     }
     
@@ -89,7 +92,7 @@
     }
     
     .oneImage_device img {
-        width: 100%; 
+        width: 100vw; 
         height: auto;
     }
 }
