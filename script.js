@@ -56,7 +56,7 @@ if (msie > 0 || trident > 0) {
 
 /* rend le contenu draggable sur téléphone */ 
 
-$(".draggable_content").draggable({axis: "x", containment: ".draggable_container"});
+$(".draggable_content").draggable({axis: "x", containment: ".draggable_container", scroll: false});
 
 /* Detection dynamique des modifications de tailles d'écran */
 
@@ -107,6 +107,7 @@ $(window).resize(function () {
         windowWidth = newWindowWidth;
         screenWidth = newScreenWidth;
 
-        $(".draggable_content").draggable({axis: "x", containment: ".draggable_container"});
+        $(".draggable_content").disableSelection();
+        $(".draggable_content").draggable({axis: "x", containment: ".draggable_container", scroll: false});
     } 
 });
