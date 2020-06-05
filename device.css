@@ -63,7 +63,6 @@
         position: relative;
         width: 1100vw;
         left: -500vw;
-        border: 2px solid blue;
     }    
     
     .draggable_content {
