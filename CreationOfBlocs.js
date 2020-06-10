@@ -261,7 +261,24 @@ var CreationOfBlocs = /*#__PURE__*/function () {
         $(oneBlocForStyleImage(repeats, "firstCase")).attr('style', 'opacity: 0 ; z-index: -5;');
       });
     }
-  }]);
+  }, {
+    key: "AddMobileStyleToBlocs",
+    value: function AddMobileStyleToBlocs() {
+      const draggableWidth =  allCases.length * 300; 
+      let posLeft = (draggableWidth / 2);
+      const containerWidth = draggableWidth * 2;
+      while (posLeft % 300 !== 0) {
+        posLeft = posLeft - 50;
+      }
+      posLeft = posLeft / -1
+
+      console.log(posLeft)
+
+      $('#draggable_container').css({ 'width': draggableWidth + 'px', 'left': posLeft + 'px'});
+      $('#ref_mobile_child').css({'min-width': containerWidth + 'px'});
+    }
+  }
+]);
 
   return CreationOfBlocs;
 }();

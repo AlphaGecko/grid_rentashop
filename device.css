@@ -11,91 +11,78 @@
     padding: inherit;
     margin-left: inherit; 
     margin-right: inherit;
+    overflow: hidden;
+    width: 100vw;
+    
 }
 
-/* Version mobile */ 
-
-.one_bloc_device {
+#ref_mobile_child { /* /!\ largeur du div avec JavaScript */
     position: relative;
-    overflow-x: hidden;
-}
-
-.draggable_container {
-    position: relative;
-    width: 500vw;
-    left: -200vw;
-}
-
-.draggable_content {
     display: flex;
-    align-items: center;
-    align-content: center;
-    width: 300vw;
-    left: 200vw;
-    cursor: pointer;
+    min-height: 100vh;
 }
 
 .oneImage_device {
-    width: 100vw;
+    display: flex;
 }
 
-.oneImage_device p {
-    margin: 0 0; 
-    padding: 0 0;
+
+/* Version mobile */ 
+
+#draggable_container { /* /!\ largeur du div avec JavaScript */
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
-.oneText_device {
-    width: 96vw;
-    padding: 0 2vw 0 2vw;
-    height: inherit;
-    text-align: left;
+#UX_square {
+    position: absolute; 
+    left: 50%;
+    top: 0;
+    width: 300px; 
+    height: 300px; 
+    border: 4px solid red; 
+    z-index: 100;
+
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
-.oneText_device p {
-    color: black;
+.description_image_device {
     opacity: 1;
+    color: black;
+}
+
+.oneImage_device {
+    overflow: hidden;
 }
 
 .oneImage_device img {
-    width: 100%; 
-    height: auto;
+    width: 300px; 
+    height: 300px; 
 }
 
-@media screen and (max-width: 637px) {
-
-    .draggable_container {
-        position: relative;
-        width: 1100vw;
-        left: -500vw;
-    }    
-    
-    .draggable_content {
-        display: flex;
-        width: 600vw;
-        left: 500vw;
-        cursor: pointer;
-    }
-    
-    .oneImage_device {
-        width: 100vw;
-    }
-    
-    .oneText_device {
-        width: 100vw;
-        padding: 0 2vw 0 2vw;
-        text-align: left;
-    }
-    
-    .oneText_device p {
-        color: black;
-        opacity: 1;
-    }
-    
-    .oneImage_device img {
-        width: 100vw; 
-        height: auto;
-    }
+#description_container {
+    position: absolute;
+    width: 50vw; 
+    left: 50%;
+    top: 500px;
+    z-index: 100;
 }
 
+#description_container .oneText_device {
+    position: absolute; 
+    left: 50%; 
+    top: 0; 
+    color: black;
 
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
 

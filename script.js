@@ -33,14 +33,34 @@ creationOfBlocs.AddDatasToArray();
 
 /* intégration des blocs HTML du tableau au DOM selon si l'utilisateur utiliseur IE ou un autre navigateur */
 
-creationOfBlocs.arrayBlocStorage.forEach(function (bloc) {
+creationOfBlocs.arrayBlocStorage.forEach(function(bloc) {
     $('.ref_container').append(bloc);
 });
 
-/* Ajout des styles dynamiques au DOM */
+/* Modification dynamique du DOM lors de la detection d'un appareil mobile ou d'un petit écran */ 
 
-for (var i = 0; i < creationOfBlocs.howManyBlocsHasBeenCreated; i++) {
-    creationOfBlocs.AddStyleEventsToBlocs(i);
+if (deviceDetection === true) {
+
+    /* Modification du DOM pour adopter la logique mobile */ 
+
+    $('<div id="ref_mobile_child"></div>').prependTo('.ref_container');
+    $('<div id="draggable_container"></div>').prependTo('#ref_mobile_child');
+    $('<div id="UX_square"></div>').prependTo('.ref_container');
+    $('<div id="description_container"></div>').appendTo('#ref_mobile_child');
+    $('.oneImage_device').prependTo('#draggable_container'); 
+    $('.oneText_device').prependTo('#description_container');
+
+    /* Ajout des styles dynamiques au DOM */
+
+    creationOfBlocs.AddMobileStyleToBlocs();
+
+} else if (deviceDetection === false) {
+
+    /* Ajout des styles dynamiques au DOM */
+
+    for (var i = 0; i < creationOfBlocs.howManyBlocsHasBeenCreated; i++) {
+        creationOfBlocs.AddStyleEventsToBlocs(i);
+    }
 }
 
 /* debug des ancres sur IE */
@@ -58,11 +78,11 @@ if (msie > 0 || trident > 0) {
 
 /* rend le contenu draggable sur téléphone */
 
-$(".draggable_content").draggable({
-    axis: "x",
-    containment: ".draggable_container",
-    scroll: false
+$("#draggable_container").draggable({
+    axis: "x", scroll: false, 
 });
+
+// containment: "#ref_mobile_child"
 
 /* Detection dynamique des modifications de tailles d'écran */
 
@@ -92,39 +112,51 @@ $(window).resize(function () {
         newWindowWidth = "big";
     };
     
-
     if (navigator.userAgent.match(/(Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini)/gi) || newWindowWidth === "small") {
         deviceDetection = true;
     } else {
         deviceDetection = false;
     };
 
-    if (newWindowWidth === "small" && newScreenWidth > 620) {
-        $(".draggable_content").css("left", "200vw"); 
-    } else if (newWindowWidth === "small" && newScreenWidth <= 620) {
-        $(".draggable_content").css("left", "500vw");
-    };
+    // if (newWindowWidth === "small" && newScreenWidth > 620) {
+    //     $(".draggable_content").css("left", "200vw"); 
+    // } else if (newWindowWidth === "small" && newScreenWidth <= 620) {
+    //     $(".draggable_content").css("left", "200vw");
+    // };
 
     if (windowWidth !== newWindowWidth) {
+
         $('.oneBloc').remove();
-        $('.one_bloc_device').remove();
+        $('.oneText_device').remove();
+        $('#draggable_container').remove();
+
         var creationOfBlocs = new CreationOfBlocs();
         creationOfBlocs.AddDatasToArray();
-        creationOfBlocs.arrayBlocStorage.forEach(function (bloc) {
+
+        creationOfBlocs.arrayBlocStorage.forEach(function(bloc) {
             $('.ref_container').append(bloc);
         });
 
-        for (var i = 0; i < creationOfBlocs.howManyBlocsHasBeenCreated; i++) {
-            creationOfBlocs.AddStyleEventsToBlocs(i);
+        if (deviceDetection === true) {
+            $('<div id="draggable_container"></div>').prependTo('.ref_container');
+            $('<div id="UX_square"></div>').prependTo('.ref_container');
+            $('<div id="description_container"></div>').appendTo('.ref_container');
+            $('.oneImage_device').prependTo('#draggable_container'); 
+            $('.oneText_device').prependTo('#description_container');
+        } else if (deviceDetection === false) {
+            for (var i = 0; i < creationOfBlocs.howManyBlocsHasBeenCreated; i++) {
+                creationOfBlocs.AddStyleEventsToBlocs(i);
+            }
         }
 
         windowWidth = newWindowWidth;
         screenWidth = newScreenWidth;
+
         $(".draggable_content").disableSelection();
 
-        $(".draggable_content").draggable({
+        $("#draggable_container").draggable({
             axis: "x",
-            containment: ".draggable_container",
+            containment: ".ref_container.device",
             scroll: false
         });
     }
