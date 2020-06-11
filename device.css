@@ -15,10 +15,13 @@
     overflow-x: hidden;
 }
 
+.ref_container.device {
+    min-height: 100vh;
+}
+
 .ref_container.device #ref_mobile_child { /* /!\ largeur du div et position avec JavaScript, ne pas modifier */
     position: relative;
     display: flex;
-    min-height: 100vh;
 }
 
 .ref_container.device .oneImage_device {
@@ -86,7 +89,7 @@
     position: absolute;
     width: 50vw; 
     left: 50%;
-    top: 60%;
+    top: 120%;
     z-index: 100;
 
     -webkit-transform: translateX(-50%);
