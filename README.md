@@ -1,4 +1,4 @@
-Ce script à été créé par MANSOUR Jean-Loup (AlphaGecko) Pour l'entreprise RentaShop. Il est libre de droit.
+Ce script à été créé par MANSOUR Jean-Loup (AlphaGecko) Pour l'entreprise RentaShop.
 
 ![Screenshot](./images/logo.jpg)
 
