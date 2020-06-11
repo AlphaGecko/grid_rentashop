@@ -9,6 +9,7 @@
 var screenWidth = "";
 var windowWidth = "";
 var deviceDetection = "";
+const caseNumber = allCases.length;
 
 /* Valeurs initiales de l'application */
 
@@ -50,13 +51,13 @@ if (deviceDetection === true) {
     $('.oneImage_device').prependTo('#draggable_container'); 
     $('.oneText_device').prependTo('#description_container');
 
-    /* Ajout des styles dynamiques au DOM */
+    /* Ajout des styles dynamiques mobile au DOM */
 
     creationOfBlocs.AddMobileStyleToBlocs();
 
 } else if (deviceDetection === false) {
 
-    /* Ajout des styles dynamiques au DOM */
+    /* Ajout des styles dynamiques écran au DOM */
 
     for (var i = 0; i < creationOfBlocs.howManyBlocsHasBeenCreated; i++) {
         creationOfBlocs.AddStyleEventsToBlocs(i);
@@ -78,9 +79,74 @@ if (msie > 0 || trident > 0) {
 
 /* rend le contenu draggable sur téléphone */
 
+var counts = 0;
+
 $("#draggable_container").draggable({
-    axis: "x", scroll: false, containment: "#ref_mobile_child" 
+    axis: "x", scroll: false, containment: "#ref_mobile_child", 
+    drag: function() {
+        counts = $('#draggable_container').css('left')
+        changeOpacityWhileUserDrag();
+    } 
 });
+
+/* Dynamique téléphone */ 
+
+function oneDescription(wichDescription) {
+    $('.oneText_device').css('opacity', '0');
+    $('#description_container :nth-child(' + wichDescription + ')').css('opacity', '1');
+} 
+
+function changePxValueToInteger(DOMRef, CSSValue) {
+    var pxDOMValue = $(DOMRef).css(CSSValue);
+    var pxRemove = pxDOMValue.slice(0, -2); 
+    var result = parseInt(pxRemove);
+    return result;
+}
+
+function UXSquareValidation() {
+    $('#UX_square').css('border-color', 'black');
+
+    setTimeout(() => {
+        $('#UX_square').css('border-color', 'white');
+    }, 100);
+}
+
+const oneScreenRatio = (allCases.length / 3);
+let parsedInitialPosNumber = changePxValueToInteger('#draggable_container', 'left')
+let parsedOneImageWidthNumber = changePxValueToInteger('#draggable_container > div:nth-child(1) > a:nth-child(1) > p > img', 'width') - 8
+
+var initialDescription = allCases.length / 2
+if (initialDescription % 1 !== 0 ) {
+    initialDescription = initialDescription + 0.5;
+}
+oneDescription(initialDescription);
+
+function changeOpacityWhileUserDrag() {
+
+    let parsedNewPosNumber = changePxValueToInteger('#draggable_container', 'left')
+
+    if (parsedNewPosNumber > parsedInitialPosNumber) {
+        var oldComparate = parsedInitialPosNumber + parsedOneImageWidthNumber;
+
+        if (parsedNewPosNumber > oldComparate) {
+            initialDescription--;
+            oneDescription(initialDescription);
+            parsedInitialPosNumber = parsedNewPosNumber;
+            UXSquareValidation();
+        } 
+
+    } else if (parsedNewPosNumber < parsedInitialPosNumber) {
+
+        var oldComparate = parsedInitialPosNumber - parsedOneImageWidthNumber;
+
+        if (parsedNewPosNumber < oldComparate) {
+            initialDescription++;
+            oneDescription(initialDescription);
+            parsedInitialPosNumber = parsedNewPosNumber;
+            UXSquareValidation();
+        } 
+    }
+}
 
 // 
 
@@ -104,7 +170,7 @@ $(window).resize(function () {
     var newWindowWidth = "";
     newScreenWidth = $(document).width();
 
-    console.log(newScreenWidth)
+    // console.log(newScreenWidth)
 
     if (newScreenWidth < 1280) {
         newWindowWidth = "small";

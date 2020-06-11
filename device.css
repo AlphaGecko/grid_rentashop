@@ -15,20 +15,20 @@
     overflow-x: hidden;
 }
 
-#ref_mobile_child { /* /!\ largeur du div avec JavaScript */
+.ref_container.device #ref_mobile_child { /* /!\ largeur du div et position avec JavaScript, ne pas modifier */
     position: relative;
     display: flex;
     min-height: 100vh;
 }
 
-.oneImage_device {
+.ref_container.device .oneImage_device {
     display: flex;
 }
 
 
 /* Version mobile */ 
 
-#draggable_container { /* /!\ largeur du div avec JavaScript */
+.ref_container.device #draggable_container { /* /!\ largeur du div avec JavaScript, ne pas modifier  */
     display: flex;
     flex-wrap: nowrap;
     left: 50%; 
@@ -40,11 +40,19 @@
     transform: translateX(-50%);
 }
 
-#UX_square {
+.ref_container.device #UX_square {
     position: absolute; 
     left: 50%;
     top: 0; 
-    border: 5px solid red; 
+    border: 5px solid white; 
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
     z-index: 100;
     padding: 20px;
 
@@ -53,40 +61,58 @@
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+
+    transition: border 0.2s linear;
+    -webkit-transition:  border 0.2s linear;
+    -moz-transition:  border 0.2s linear;
+    -o-transition:  border 0.2s linear;
 }
 
-.description_image_device {
+.ref_container.device .description_image_device {
     opacity: 1;
     color: black;
 }
 
-.oneImage_device {
+.ref_container.device .oneImage_device {
     overflow: hidden;
 }
 
-.oneImage_device img {
+.ref_container.device .oneImage_device img {
     width: 33.333vw; 
     height: 33.333vw; 
 }
 
-#description_container {
+.ref_container.device #description_container {
     position: absolute;
     width: 50vw; 
     left: 50%;
-    top: 500px;
+    top: 60%;
     z-index: 100;
-}
-
-#description_container .oneText_device {
-    position: absolute; 
-    left: 50%; 
-    top: 0; 
-    color: black;
 
     -webkit-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+}
+
+.ref_container.device #description_container .oneText_device {
+    position: absolute; 
+    left: 50%; 
+    top: 0; 
+    color: black;
+    width: 100%; 
+    text-align: center;
+
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
 }
 

@@ -264,6 +264,9 @@ var CreationOfBlocs = /*#__PURE__*/function () {
   }, {
     key: "AddMobileStyleToBlocs",
     value: function AddMobileStyleToBlocs() {
+
+      /* Mise en place des dimensions et des positions des différents blocs */ 
+
       const oneScreenRatio = (allCases.length / 3);
       const draggableWidth =  oneScreenRatio * $(window).width();
       const oneScreen = draggableWidth / oneScreenRatio;
@@ -271,11 +274,13 @@ var CreationOfBlocs = /*#__PURE__*/function () {
       const posLeftContainer = ((oneScreen * (oneScreenRatio - 1)) + (oneScreen / 3)) / -1 ;
       const squareSize = (oneScreen / oneScreenRatio) + 4;
 
-      /* Si le nombre de cases est paire, pas de bloc central : remise sur une case par default */
+      /* Correction de position si le nombre de cases et pair */
 
       if (allCases.length % 2 === 0) {
         posLeftContainer = posLeftContainer + (oneScreen * 2 / 3)
       } 
+
+      /* Rajout dans le DOM */
 
       $('#ref_mobile_child').css({'width': containerWidth + 'px', 'left' : posLeftContainer + 'px' });
       $('#draggable_container').css({ 'width': draggableWidth + 'px'});
