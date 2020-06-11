@@ -79,10 +79,10 @@ if (msie > 0 || trident > 0) {
 /* rend le contenu draggable sur téléphone */
 
 $("#draggable_container").draggable({
-    axis: "x", scroll: false, 
+    axis: "x", scroll: false, containment: "#ref_mobile_child" 
 });
 
-// containment: "#ref_mobile_child"
+// 
 
 /* Detection dynamique des modifications de tailles d'écran */
 

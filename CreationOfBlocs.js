@@ -264,18 +264,23 @@ var CreationOfBlocs = /*#__PURE__*/function () {
   }, {
     key: "AddMobileStyleToBlocs",
     value: function AddMobileStyleToBlocs() {
-      const draggableWidth =  allCases.length * 300; 
-      let posLeft = (draggableWidth / 2);
-      const containerWidth = draggableWidth * 2;
-      while (posLeft % 300 !== 0) {
-        posLeft = posLeft - 50;
-      }
-      posLeft = posLeft / -1
+      const oneScreenRatio = (allCases.length / 3);
+      const draggableWidth =  oneScreenRatio * $(window).width();
+      const oneScreen = draggableWidth / oneScreenRatio;
+      const containerWidth = (draggableWidth *  oneScreenRatio) - (oneScreen * (oneScreenRatio + 1) ) + (oneScreen * 2 / 3);
+      const posLeftContainer = ((oneScreen * (oneScreenRatio - 1)) + (oneScreen / 3)) / -1 ;
+      const squareSize = (oneScreen / oneScreenRatio) + 4;
 
-      console.log(posLeft)
+      /* Si le nombre de cases est paire, pas de bloc central : remise sur une case par default */
 
-      $('#draggable_container').css({ 'width': draggableWidth + 'px', 'left': posLeft + 'px'});
-      $('#ref_mobile_child').css({'min-width': containerWidth + 'px'});
+      if (allCases.length % 2 === 0) {
+        posLeftContainer = posLeftContainer + (oneScreen * 2 / 3)
+      } 
+
+      $('#ref_mobile_child').css({'width': containerWidth + 'px', 'left' : posLeftContainer + 'px' });
+      $('#draggable_container').css({ 'width': draggableWidth + 'px'});
+      $('#UX_square').css({ 'width': squareSize + 'px', 'height': squareSize + 'px' });
+      
     }
   }
 ]);

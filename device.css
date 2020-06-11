@@ -11,9 +11,8 @@
     padding: inherit;
     margin-left: inherit; 
     margin-right: inherit;
-    overflow: hidden;
     width: 100vw;
-    
+    overflow-x: hidden;
 }
 
 #ref_mobile_child { /* /!\ largeur du div avec JavaScript */
@@ -30,19 +29,24 @@
 /* Version mobile */ 
 
 #draggable_container { /* /!\ largeur du div avec JavaScript */
-    position: relative;
     display: flex;
     flex-wrap: nowrap;
+    left: 50%; 
+
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #UX_square {
     position: absolute; 
     left: 50%;
-    top: 0;
-    width: 300px; 
-    height: 300px; 
-    border: 4px solid red; 
+    top: 0; 
+    border: 5px solid red; 
     z-index: 100;
+    padding: 20px;
 
     -webkit-transform: translateX(-50%);
     -o-transform: translateX(-50%);
@@ -61,8 +65,8 @@
 }
 
 .oneImage_device img {
-    width: 300px; 
-    height: 300px; 
+    width: 33.333vw; 
+    height: 33.333vw; 
 }
 
 #description_container {
