@@ -140,10 +140,12 @@ function changeOpacityWhileUserDrag() {
 }
 
 let oneScreenRatio = (allCases.length / 3);
-let parsedInitialPosNumber = changePxValueToInteger('#draggable_container', 'left')
-let parsedOneImageWidthNumber = changePxValueToInteger('#draggable_container > div:nth-child(1) > span:nth-child(1) > p > img', 'width') - 8
+let parsedInitialPosNumber;
+let parsedOneImageWidthNumber;
 
 if (deviceDetection === true) {
+    parsedInitialPosNumber = changePxValueToInteger('#draggable_container', 'left');
+    parsedOneImageWidthNumber = changePxValueToInteger('#draggable_container > div:nth-child(1) > span:nth-child(1) > p > img', 'width') - 8;
     var initialDescription = allCases.length / 2
     if (initialDescription % 1 !== 0 ) {
         initialDescription = initialDescription + 0.5;
@@ -230,12 +232,15 @@ $(window).resize(function () {
         });
 
         oneScreenRatio = (allCases.length / 3);
-        parsedInitialPosNumber = changePxValueToInteger('#draggable_container', 'left')
-        parsedOneImageWidthNumber = changePxValueToInteger('#draggable_container > div:nth-child(1) > span:nth-child(1) > p > img', 'width') - 8
-        initialDescription = allCases.length / 2
-        if (initialDescription % 1 !== 0 ) {
-            initialDescription = initialDescription + 0.5;
+        
+        if (deviceDetection === true) {
+            parsedInitialPosNumber = changePxValueToInteger('#draggable_container', 'left')
+            parsedOneImageWidthNumber = changePxValueToInteger('#draggable_container > div:nth-child(1) > span:nth-child(1) > p > img', 'width') - 8
+            initialDescription = allCases.length / 2
+            if (initialDescription % 1 !== 0 ) {
+                initialDescription = initialDescription + 0.5;
+            }
+            oneDescription(initialDescription);
         }
-        oneDescription(initialDescription);
     }
 });
