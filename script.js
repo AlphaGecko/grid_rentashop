@@ -155,9 +155,14 @@ if (deviceDetection === true) {
 
 // 
 
+var goBackToOpacity1 = 0;
+
 /* Detection dynamique des modifications de tailles d'écran */
 
 $(window).resize(function () {
+
+    goBackToOpacity1++
+    $('.ref_container').css({'opacity' : '0'});
 
     /* debug des ancres sur IE */
 
@@ -243,4 +248,11 @@ $(window).resize(function () {
             oneDescription(initialDescription);
         }
     }
+
+    setTimeout(() => {
+        goBackToOpacity1--
+        if (goBackToOpacity1 === 0) {
+            $('.ref_container').css({'opacity' : '1'});
+        }
+    }, 100);
 });
