@@ -105,7 +105,7 @@ function changePxValueToInteger(DOMRef, CSSValue) {
 }
 
 function UXSquareValidation() {
-    $('#UX_square').css('border-color', 'black');
+    $('#UX_square').css('border-color', '#3498db');
 
     setTimeout(() => {
         $('#UX_square').css('border-color', 'white');
@@ -214,7 +214,7 @@ $(window).resize(function () {
         if (deviceDetection === true) {
             $('<div id="ref_mobile_child"></div>').prependTo('.ref_container');
             $('<div id="draggable_container"></div>').prependTo('#ref_mobile_child');
-            $('<div id="UX_square"></div>').prependTo('.ref_container');
+            $('<div id="UX_square"></div>').prependTo('#ref_mobile_child');
             $('<div id="description_container"></div>').appendTo('.ref_container');
             $('.oneImage_device').prependTo('#draggable_container'); 
             $('.oneText_device').prependTo('#description_container');

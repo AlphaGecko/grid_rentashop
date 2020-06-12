@@ -84,7 +84,7 @@
 
 .ref_container.device #description_container {
     position: relative;
-    width: 50vw; 
+    width: 60vw; 
     left: 50%;
     bottom: 0;
     z-index: 100;
@@ -122,3 +122,13 @@
     width: 50vw;
 }
 
+@media screen and (max-width: 35.5em) {
+    .dynamic_image { 
+        height: auto; 
+        width: 80vw;
+    }
+
+    .ref_container.device #description_container {
+        width: 96vw; 
+    }
+}
