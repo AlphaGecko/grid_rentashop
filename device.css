@@ -21,7 +21,6 @@
 
 .ref_container.device #ref_mobile_child { /* /!\ largeur du div et position avec JavaScript, ne pas modifier */
     position: relative;
-    display: flex;
 }
 
 .ref_container.device .oneImage_device {
@@ -86,10 +85,10 @@
 }
 
 .ref_container.device #description_container {
-    position: absolute;
+    position: relative;
     width: 50vw; 
     left: 50%;
-    top: 110%;
+    bottom: 0;
     z-index: 100;
 
     -webkit-transform: translateX(-50%);
