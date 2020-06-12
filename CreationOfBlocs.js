@@ -269,10 +269,10 @@ var CreationOfBlocs = /*#__PURE__*/function () {
 
       const oneScreenRatio = (allCases.length / 3);
       const draggableWidth =  oneScreenRatio * $(window).width();
-      const oneScreen = draggableWidth / oneScreenRatio;
+      const oneScreen = $(window).width();
       const containerWidth = (draggableWidth *  oneScreenRatio) - (oneScreen * (oneScreenRatio + 1) ) + (oneScreen * 2 / 3);
       const posLeftContainer = ((oneScreen * (oneScreenRatio - 1)) + (oneScreen / 3)) / -1 ;
-      const squareSize = (oneScreen / oneScreenRatio) + 4;
+      const squareSize = (oneScreen / oneScreenRatio) + 5;
 
       /* Correction de position si le nombre de cases et pair */
 

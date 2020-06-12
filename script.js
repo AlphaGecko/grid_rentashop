@@ -46,8 +46,8 @@ if (deviceDetection === true) {
 
     $('<div id="ref_mobile_child"></div>').prependTo('.ref_container');
     $('<div id="draggable_container"></div>').prependTo('#ref_mobile_child');
-    $('<div id="UX_square"></div>').prependTo('.ref_container');
-    $('<div id="description_container"></div>').appendTo('#ref_mobile_child');
+    $('<div id="UX_square"></div>').prependTo('#ref_mobile_child');
+    $('<div id="description_container"></div>').appendTo('.ref_container');
     $('.oneImage_device').prependTo('#draggable_container'); 
     $('.oneText_device').prependTo('#description_container');
 
@@ -163,6 +163,7 @@ $(window).resize(function () {
 
     goBackToOpacity1++
     $('.ref_container').css({'opacity' : '0'});
+    $('#loader').css({'opacity' : '1', 'z-index' : '1000'}); 
 
     /* debug des ancres sur IE */
 
@@ -214,7 +215,7 @@ $(window).resize(function () {
             $('<div id="ref_mobile_child"></div>').prependTo('.ref_container');
             $('<div id="draggable_container"></div>').prependTo('#ref_mobile_child');
             $('<div id="UX_square"></div>').prependTo('.ref_container');
-            $('<div id="description_container"></div>').appendTo('#ref_mobile_child');
+            $('<div id="description_container"></div>').appendTo('.ref_container');
             $('.oneImage_device').prependTo('#draggable_container'); 
             $('.oneText_device').prependTo('#description_container');
             creationOfBlocs.AddMobileStyleToBlocs();
@@ -253,6 +254,7 @@ $(window).resize(function () {
         goBackToOpacity1--
         if (goBackToOpacity1 === 0) {
             $('.ref_container').css({'opacity' : '1'});
+            $('#loader').css({'opacity' : '0', 'z-index' : '-1000'}); 
         }
-    }, 100);
+    }, 300);
 });

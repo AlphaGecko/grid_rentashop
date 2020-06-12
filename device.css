@@ -3,20 +3,19 @@
 .ref_container.device .oneImage_device p {
     opacity: inherit;
     text-align: center;
+    margin: 0 0; 
+    padding: 0 0;
 }
 
 .ref_container.device {
-    position: relative;
     max-width: inherit;
     padding: inherit;
-    margin-left: inherit; 
-    margin-right: inherit;
-    width: 100vw;
-    overflow-x: hidden;
-}
-
-.ref_container.device {
+    margin: 0 0; 
+    padding: 0 0;
+    width: inherit;
+    display: inherit;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .ref_container.device #ref_mobile_child { /* /!\ largeur du div et position avec JavaScript, ne pas modifier */
@@ -56,7 +55,6 @@
     0 100px 80px rgba(0, 0, 0, 0.12)
   ;
     z-index: 100;
-    padding: 20px;
 
     -webkit-transform: translateX(-50%);
     -o-transform: translateX(-50%);
@@ -90,6 +88,7 @@
     left: 50%;
     bottom: 0;
     z-index: 100;
+    margin-top: 50px;
 
     -webkit-transform: translateX(-50%);
     -o-transform: translateX(-50%);
@@ -119,7 +118,7 @@
 }
 
 .dynamic_image { 
-    height: 40vh; 
-    width: auto;
+    height: auto; 
+    width: 50vw;
 }
 
