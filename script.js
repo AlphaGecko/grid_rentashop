@@ -91,6 +91,7 @@ $("#draggable_container").draggable({
 
 /* Dynamique téléphone */ 
 
+
 function oneDescription(wichDescription) {
     $('.oneText_device').css('opacity', '0');
     $('#description_container :nth-child(' + wichDescription + ')').css('opacity', '1');
@@ -110,16 +111,6 @@ function UXSquareValidation() {
         $('#UX_square').css('border-color', 'white');
     }, 100);
 }
-
-const oneScreenRatio = (allCases.length / 3);
-let parsedInitialPosNumber = changePxValueToInteger('#draggable_container', 'left')
-let parsedOneImageWidthNumber = changePxValueToInteger('#draggable_container > div:nth-child(1) > a:nth-child(1) > p > img', 'width') - 8
-
-var initialDescription = allCases.length / 2
-if (initialDescription % 1 !== 0 ) {
-    initialDescription = initialDescription + 0.5;
-}
-oneDescription(initialDescription);
 
 function changeOpacityWhileUserDrag() {
 
@@ -146,6 +137,18 @@ function changeOpacityWhileUserDrag() {
             UXSquareValidation();
         } 
     }
+}
+
+let oneScreenRatio = (allCases.length / 3);
+let parsedInitialPosNumber = changePxValueToInteger('#draggable_container', 'left')
+let parsedOneImageWidthNumber = changePxValueToInteger('#draggable_container > div:nth-child(1) > span:nth-child(1) > p > img', 'width') - 8
+
+if (deviceDetection === true) {
+    var initialDescription = allCases.length / 2
+    if (initialDescription % 1 !== 0 ) {
+        initialDescription = initialDescription + 0.5;
+    }
+    oneDescription(initialDescription);
 }
 
 // 
@@ -184,18 +187,17 @@ $(window).resize(function () {
         deviceDetection = false;
     };
 
-    // if (newWindowWidth === "small" && newScreenWidth > 620) {
-    //     $(".draggable_content").css("left", "200vw"); 
-    // } else if (newWindowWidth === "small" && newScreenWidth <= 620) {
-    //     $(".draggable_content").css("left", "200vw");
-    // };
+    if (screenWidth !== newScreenWidth) {
 
-    if (windowWidth !== newWindowWidth) {
-
-        $('.oneBloc').remove();
-        $('.oneText_device').remove();
-        $('#draggable_container').remove();
-
+        setTimeout(() => {
+            $('.oneBloc').remove();
+            $('.oneText_device').remove();
+            $('#UX_square').remove();
+            $('#ref_mobile_child').remove();
+            $('#draggable_container').remove(); 
+            $('#description_container').remove();
+            $('.oneImage_device').remove();
+        }, 10);
         var creationOfBlocs = new CreationOfBlocs();
         creationOfBlocs.AddDatasToArray();
 
@@ -204,26 +206,38 @@ $(window).resize(function () {
         });
 
         if (deviceDetection === true) {
-            $('<div id="draggable_container"></div>').prependTo('.ref_container');
+            $('<div id="ref_mobile_child"></div>').prependTo('.ref_container');
+            $('<div id="draggable_container"></div>').prependTo('#ref_mobile_child');
             $('<div id="UX_square"></div>').prependTo('.ref_container');
-            $('<div id="description_container"></div>').appendTo('.ref_container');
+            $('<div id="description_container"></div>').appendTo('#ref_mobile_child');
             $('.oneImage_device').prependTo('#draggable_container'); 
             $('.oneText_device').prependTo('#description_container');
+            creationOfBlocs.AddMobileStyleToBlocs();
         } else if (deviceDetection === false) {
             for (var i = 0; i < creationOfBlocs.howManyBlocsHasBeenCreated; i++) {
                 creationOfBlocs.AddStyleEventsToBlocs(i);
             }
-        }
+        } 
 
-        windowWidth = newWindowWidth;
-        screenWidth = newScreenWidth;
+        /* rend le contenu draggable sur téléphone */
 
-        $(".draggable_content").disableSelection();
+       counts = 0;
 
         $("#draggable_container").draggable({
-            axis: "x",
-            containment: ".ref_container.device",
-            scroll: false
+            axis: "x", scroll: false, containment: "#ref_mobile_child", 
+            drag: function() {
+                counts = $('#draggable_container').css('left')
+                changeOpacityWhileUserDrag();
+            } 
         });
+
+        oneScreenRatio = (allCases.length / 3);
+        parsedInitialPosNumber = changePxValueToInteger('#draggable_container', 'left')
+        parsedOneImageWidthNumber = changePxValueToInteger('#draggable_container > div:nth-child(1) > span:nth-child(1) > p > img', 'width') - 8
+        initialDescription = allCases.length / 2
+        if (initialDescription % 1 !== 0 ) {
+            initialDescription = initialDescription + 0.5;
+        }
+        oneDescription(initialDescription);
     }
 });

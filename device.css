@@ -89,7 +89,7 @@
     position: absolute;
     width: 50vw; 
     left: 50%;
-    top: 120%;
+    top: 110%;
     z-index: 100;
 
     -webkit-transform: translateX(-50%);
@@ -117,5 +117,10 @@
     -webkit-transition: opacity 0.3s linear;
     -moz-transition: opacity 0.3s linear;
     -o-transition: opacity 0.3s linear;
+}
+
+.dynamic_image { 
+    height: 40vh; 
+    width: auto;
 }
 
