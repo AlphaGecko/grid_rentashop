@@ -189,15 +189,13 @@ $(window).resize(function () {
 
     if (screenWidth !== newScreenWidth) {
 
-        setTimeout(() => {
-            $('.oneBloc').remove();
-            $('.oneText_device').remove();
-            $('#UX_square').remove();
-            $('#ref_mobile_child').remove();
-            $('#draggable_container').remove(); 
-            $('#description_container').remove();
-            $('.oneImage_device').remove();
-        }, 10);
+        $('.oneBloc').remove();
+        $('.oneText_device').remove();
+        $('#UX_square').remove();
+        $('#ref_mobile_child').remove();
+        $('#draggable_container').remove(); 
+        $('#description_container').remove();
+        $('.oneImage_device').remove();
         var creationOfBlocs = new CreationOfBlocs();
         creationOfBlocs.AddDatasToArray();
 
