@@ -88,4 +88,6 @@ allCases = [
         description_1: "Ceci est ma description du projet de l'image 1 (ligne3)", 
         description_2: "Ceci est ma description du projet de l'image 2 (ligne3)"
     },
+
+    // etc.
 ]
