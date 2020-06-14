@@ -267,24 +267,39 @@ var CreationOfBlocs = /*#__PURE__*/function () {
 
       /* Mise en place des dimensions et des positions des différents blocs */ 
 
-      const oneScreenRatio = (allCases.length / 3);
-      const draggableWidth =  oneScreenRatio * $(window).width();
-      const oneScreen = $(window).width();
-      const containerWidth = (draggableWidth *  oneScreenRatio) - (oneScreen * (oneScreenRatio + 1) ) + (oneScreen * 2 / 3);
-      const posLeftContainer = ((oneScreen * (oneScreenRatio - 1)) + (oneScreen / 3)) / -1 ;
-      const squareSize = (oneScreen / oneScreenRatio) + 5;
+      let oneScreenRatio = (allCases.length / 3);
+      let oneScreen = $(window).width();
+      let oneImage = oneScreen / 3;
+      let draggableWidth =  oneScreenRatio * oneScreen;
+      let sideRef = (oneImage * (allCases.length / 2)) - (oneImage / 2);
+      let containerWidth = (draggableWidth + (sideRef * 2));
+      let squareSize = (oneScreen / 3) + 5;
+      let leftContainerPercentage = 50;
+      let leftDraggablePercentage = 50;
+      let halfImagePercentage = ((oneImage / 2) / containerWidth) * 100
 
       /* Correction de position si le nombre de cases et pair */
 
       if (allCases.length % 2 === 0) {
-        posLeftContainer = posLeftContainer + (oneScreen * 2 / 3)
+        leftDraggablePercentage = leftDraggablePercentage + halfImagePercentage;
       } 
 
       /* Rajout dans le DOM */
 
-      $('#ref_mobile_child').css({'width': containerWidth + 'px', 'left' : posLeftContainer + 'px' });
-      $('#draggable_container').css({ 'width': draggableWidth + 'px'});
-      $('#UX_square').css({ 'width': squareSize + 'px', 'height': squareSize + 'px' });
+      $('#ref_mobile_child').css({'width': containerWidth + 'px', 'left' : leftContainerPercentage + '%'});
+      $('#draggable_container').css({ 'width': draggableWidth + 'px', 'left' : leftDraggablePercentage + '%'});
+      $('#UX_square').css({ 'width': squareSize + 'px', 'height' : squareSize });
+
+      /* Debug */
+      
+      console.log(
+        "Debug : \n" + 
+        "Total de cases : " + allCases.length + "\n" + 
+        "OneScreenRatio : " + oneScreenRatio + "\n" + 
+        "OneScreen : " + oneScreen + "\n" +
+        "DraggableWidth (container de toutes les images) : " + draggableWidth + "\n" + 
+        "Container width (dans lequel aura lieu le scrolling) : " + containerWidth + "\n" 
+        )
       
     }
   }

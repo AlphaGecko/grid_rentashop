@@ -56,19 +56,19 @@ var OneBlocOf3Cases = /*#__PURE__*/function () {
       <div class="oneImage_device">
         <span>
           <p>
-            <img src=${this.lien_image_1} alt=${this.alt_1}/>
+            <img src=${this.lien_image_1} alt=${this.alt_1} class="device_image"/>
           </p>
         </span>
 
         <span>
           <p>
-            <img src=${this.lien_image_2} alt=${this.alt_2}/>
+            <img src=${this.lien_image_2} alt=${this.alt_2} class="device_image">
           </p>
         </span>
         
         <span>
           <p>
-            <img src=${this.lien_image_3} alt=${this.alt_3}/>
+            <img src=${this.lien_image_3} alt=${this.alt_3} class="device_image"/>
           </p>
         </span>
       </div>

@@ -89,5 +89,32 @@ allCases = [
         description_2: "Ceci est ma description du projet de l'image 2 (ligne3)"
     },
 
+    
+    // bloc 4 
+
+    case10 = {
+        lien_image: "./images/07.jpg",
+        lien_partenaire: "https://www.google.com",
+        alt: "partenaire_4", 
+        description_1: "Ceci est ma description de site de l'image 2 (ligne4)", 
+        description_2: "Ceci est ma description de site de l'image 3 (ligne4)"
+    },
+
+    case11 = {
+        lien_image: "./images/08.jpg",
+        lien_partenaire: "https://www.google.com",
+        alt: "partenaire_5", 
+        description_1: "Ceci est ma description de site de l'image 1 (ligne4)", 
+        description_2: "Ceci est ma description du projet de l'image 3 (ligne4)" 
+    },
+
+    case12 = {
+        lien_image: "./images/09.jpg",
+        lien_partenaire: "https://www.google.com",
+        alt: "partenaire_6", 
+        description_1: "Ceci est ma description du projet de l'image 1 (ligne4)", 
+        description_2: "Ceci est ma description du projet de l'image 2 (ligne)"
+    },
+
     // etc.
 ]

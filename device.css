@@ -20,6 +20,12 @@
 
 .ref_container.device #ref_mobile_child { /* /!\ largeur du div et position avec JavaScript, ne pas modifier */
     position: relative;
+
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 .ref_container.device .oneImage_device {
@@ -32,7 +38,6 @@
 .ref_container.device #draggable_container { /* /!\ largeur du div avec JavaScript, ne pas modifier  */
     display: flex;
     flex-wrap: nowrap;
-    left: 50%; 
 
     -webkit-transform: translateX(-50%);
     -o-transform: translateX(-50%);
