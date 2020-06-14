@@ -276,8 +276,8 @@ var CreationOfBlocs = /*#__PURE__*/function () {
       let squareSize = (oneScreen / 3) + 5;
       let leftContainerPercentage = 50;
       let leftDraggablePercentage = 50;
-      let halfImagePercentage = ((oneImage / 2) / containerWidth) * 100
-
+      let halfImagePercentage = ((oneImage / 2) / containerWidth) * 100; 
+      
       /* Correction de position si le nombre de cases et pair */
 
       if (allCases.length % 2 === 0) {
@@ -290,17 +290,16 @@ var CreationOfBlocs = /*#__PURE__*/function () {
       $('#draggable_container').css({ 'width': draggableWidth + 'px', 'left' : leftDraggablePercentage + '%'});
       $('#UX_square').css({ 'width': squareSize + 'px', 'height' : squareSize });
 
-      /* Debug */
+      /* Valeurs */
       
-      console.log(
-        "Debug : \n" + 
-        "Total de cases : " + allCases.length + "\n" + 
-        "OneScreenRatio : " + oneScreenRatio + "\n" + 
-        "OneScreen : " + oneScreen + "\n" +
-        "DraggableWidth (container de toutes les images) : " + draggableWidth + "\n" + 
-        "Container width (dans lequel aura lieu le scrolling) : " + containerWidth + "\n" 
-        )
-      
+      // console.log(
+      //   "valeurs attribués aux éléments par le script : \n" + 
+      //   "Total de cases : " + allCases.length + "\n" + 
+      //   "Nombre d'écrans contenant 3 cases : " + oneScreenRatio + "\n" + 
+      //   "largeur d'un écran : " + oneScreen + "\n" +
+      //   "Taille du container de toutes les images : " + draggableWidth + "\n" + 
+      //   "Taille du container scrollable : " + containerWidth + "\n" 
+      //   )
     }
   }
 ]);

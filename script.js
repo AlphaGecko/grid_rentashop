@@ -6,12 +6,18 @@
 
 /************************************************************************************************/
 
+/* Vérification que l'utilisateur à bien fait le nécessaire pour le bon fonctionnement du script */
+
+let tests = new BlocsTest; 
+tests.initializeTests();
+
+/* Valeurs initiales lors du lancement du script */
+
 var screenWidth = "";
 var windowWidth = "";
 var deviceDetection = "";
 const caseNumber = allCases.length;
-
-/* Valeurs initiales de l'application */
+var goBackToOpacity1 = 0;
 
 screenWidth = $(document).width();
 
@@ -65,7 +71,6 @@ if (deviceDetection === true) {
 }
 
 /* debug des ancres sur IE */
-
 
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf('MSIE ');
@@ -154,8 +159,6 @@ if (deviceDetection === true) {
 }
 
 // 
-
-var goBackToOpacity1 = 0;
 
 /* Detection dynamique des modifications de tailles d'écran */
 
