@@ -65,35 +65,44 @@ Afin de respecter votre demande, le style à été adapté au formatage de la bi
 
 ## Mode d'emploi 
   
-Outil entièrement prêt à l'emploi. Voilà les éléments à mettre dans votre page HTML ou PHP : 
+Outil entièrement prêt à l'emploi. Il suffit d'ajouter dans le body dans votre page HTML ou PHP : 
 
-<head>
-    <!-- main style -->
-    <link rel="stylesheet" href="dynamicGalery.css" media="screen"  type="text/css"/>
-    <!-- Jquery (draggable) -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-    <!-- Foundation -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-</head>
+Entre les balises head :  
+  
+    <!-- main style -->  
+    <link rel="stylesheet" href="dynamicGalery.css" media="screen"  type="text/css"/>  
+    <!-- Jquery (draggable) -->  
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">  
+    <!-- Foundation -->  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">  
 
-<body>
-    <!-- Référence dans lequel le contenu sera injecté [Obligatoire] -->
-    <div class="ref_container"></div>
-    <!-- loader [Optionnel] -->
-    <div id="loader"><div></div></div>
-    <!-- Jquery -->
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-    <!-- Foundation -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <!-- Scripts des blocs -->
-    <script src="custom.js"></script> 
-    <script src="galleryScript.min.js"></script> 
-</body>
+Entre les balises body :   
+
+    <!-- Référence dans lequel le contenu sera injecté [Obligatoire] -->  
+    <div class="ref_container"></div>  
+    <!-- loader [Optionnel] -->  
+    <div id="loader"><div></div></div>  
+    <!-- Jquery -->  
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>  
+    <!-- Foundation -->  
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>  
+    <!-- Scripts des blocs -->  
+    <script src="custom.js"></script>   
+    <script src="galleryScript.min.js"></script>   
+
 
 Les différentes données et styles dynamiques sont alors injectés dans le div avec la classe "ref_container". 
-Bien entendu, si vous appelez Jquery, Jquery UI ou Foundation autrement que via un lien CDN, vous pouvez enlevez les liens correspondants. 
+Bien entendu, si vous souhaitez appelez les bibliothèques Jquery, Jquery UI ou Foundation autrement que via un lien CDN, vous pouvez enlever les liens correspondants.   
 
-De préférence, les images doivent être au format carré.  
+Les images doivent être au format carré.    
+
 Les différentes couleurs et style d'écritures sont modifiables directement dans des variables en haut du fichier dynamicGalery.scss. N'oubliez pas de compiler le fichier en CSS. 
+
+Si le script ne fonctionne pas normalement alors que vous pensez avoir respecté toutes les consignes de ce guide,
+veuillez modifier la variable initializeTest dans "custom.js" en :  
+
+let initializeTest = true;   
+
+Le résultat du test apparaît alors dans la console de votre navigateur.  
