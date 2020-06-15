@@ -52,6 +52,11 @@ $UXSquareSwitchImage : #3498db;
 
 
 
+body {
+    display: block;
+    margin: 0 0; 
+    padding: 0 0;
+}
 
 
 /* Containers */ 
@@ -177,7 +182,7 @@ $UXSquareSwitchImage : #3498db;
 
 #loader {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
@@ -196,6 +201,7 @@ $UXSquareSwitchImage : #3498db;
     height: 200px;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
     -webkit-animation: spin 2s linear infinite; 
     -moz-animation:  spin 2s linear infinite;
     -o-animation:  spin 2s linear infinite;

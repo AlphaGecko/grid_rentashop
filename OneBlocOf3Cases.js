@@ -52,55 +52,7 @@ var OneBlocOf3Cases = /*#__PURE__*/function () {
   }, {
     key: "addOneDeviceBlocToDOM",
     value: function addOneDeviceBlocToDOM() {
-      return `
-      <div class="oneImage_device">
-        <span>
-          <p>
-            <img src=${this.lien_image_1} alt=${this.alt_1} class="device_image"/>
-          </p>
-        </span>
-
-        <span>
-          <p>
-            <img src=${this.lien_image_2} alt=${this.alt_2} class="device_image">
-          </p>
-        </span>
-        
-        <span>
-          <p>
-            <img src=${this.lien_image_3} alt=${this.alt_3} class="device_image"/>
-          </p>
-        </span>
-      </div>
-
-      <div class="oneText_device">
-        <a href=${this.url_partenaire_1} target="_blank" rel="noopener noreferrer nofollow">
-            <p>
-              <img src=${this.lien_image_1} alt=${this.alt_1} class="dynamic_image"/>
-            </p>
-        </a>
-        <p class="description_image_device description_site_image_1">${this.description_site_2}</p>
-        <p class="description_image_device description_projet_image_1">${this.description_site_3}</p>
-      </div>
-      <div class="oneText_device">
-        <a href=${this.url_partenaire_2} target="_blank" rel="noopener noreferrer nofollow">
-          <p>
-            <img src=${this.lien_image_2} alt=${this.alt_2} class="dynamic_image"/>
-          </p>
-        </a>
-        <p class="description_image_device description_site_image_2">${this.description_site_1}</p>
-        <p class="description_image_device description_projet_image_2">${this.description_projet_3}</p>
-      </div>
-      <div class="oneText_device">
-        <a href=${this.url_partenaire_3} target="_blank" rel="noopener noreferrer nofollow">
-          <p>
-            <img src=${this.lien_image_3} alt=${this.alt_3} class="dynamic_image"/>
-          </p>
-        </a>
-        <p class="description_image_device description_site_image_3">${this.description_projet_1}</p>
-        <p class="description_image_device description_projet_image_3">${this.description_projet_2}</p>
-      </div>
-  `;
+      return "\n      <div class=\"oneImage_device\">\n        <span>\n          <p>\n            <img src=".concat(this.lien_image_1, " alt=").concat(this.alt_1, " class=\"device_image\"/>\n          </p>\n        </span>\n\n        <span>\n          <p>\n            <img src=").concat(this.lien_image_2, " alt=").concat(this.alt_2, " class=\"device_image\">\n          </p>\n        </span>\n        \n        <span>\n          <p>\n            <img src=").concat(this.lien_image_3, " alt=").concat(this.alt_3, " class=\"device_image\"/>\n          </p>\n        </span>\n      </div>\n\n      <div class=\"oneText_device\">\n        <a href=").concat(this.url_partenaire_1, " target=\"_blank\" rel=\"noopener noreferrer nofollow\">\n            <p>\n              <img src=").concat(this.lien_image_1, " alt=").concat(this.alt_1, " class=\"dynamic_image\"/>\n            </p>\n        </a>\n        <p class=\"description_image_device description_site_image_1\">").concat(this.description_site_2, "</p>\n        <p class=\"description_image_device description_projet_image_1\">").concat(this.description_site_3, "</p>\n      </div>\n      <div class=\"oneText_device\">\n        <a href=").concat(this.url_partenaire_2, " target=\"_blank\" rel=\"noopener noreferrer nofollow\">\n          <p>\n            <img src=").concat(this.lien_image_2, " alt=").concat(this.alt_2, " class=\"dynamic_image\"/>\n          </p>\n        </a>\n        <p class=\"description_image_device description_site_image_2\">").concat(this.description_site_1, "</p>\n        <p class=\"description_image_device description_projet_image_2\">").concat(this.description_projet_3, "</p>\n      </div>\n      <div class=\"oneText_device\">\n        <a href=").concat(this.url_partenaire_3, " target=\"_blank\" rel=\"noopener noreferrer nofollow\">\n          <p>\n            <img src=").concat(this.lien_image_3, " alt=").concat(this.alt_3, " class=\"dynamic_image\"/>\n          </p>\n        </a>\n        <p class=\"description_image_device description_site_image_3\">").concat(this.description_projet_1, "</p>\n        <p class=\"description_image_device description_projet_image_3\">").concat(this.description_projet_2, "</p>\n      </div>\n  ");
     }
   }]);
 
