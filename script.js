@@ -109,15 +109,15 @@ function changePxValueToInteger(DOMRef, CSSValue) {
     return result;
 }
 
-function UXSquareValidation() {
-    let UXValidation = $('#UX_square').css('color');
-    let UXReset = $('#UX_square').css('border-color');
+let UXValidation = $('#UX_square').css('color');
+let UXReset = $('#UX_square').css('border-color');
 
+function UXSquareValidation() {
     $('#UX_square').css('border-color', UXValidation);
 
     setTimeout(() => {
         $('#UX_square').css('border-color', UXReset);
-    }, 100);
+    }, 150);
 }
 
 function changeOpacityWhileUserDrag() {
