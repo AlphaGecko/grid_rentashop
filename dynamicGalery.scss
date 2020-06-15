@@ -1,0 +1,370 @@
+/***************************************************************************************************************/
+/* Vous pouvez modifier directement les valeurs suivantes. N'oubliez pas de compilier le fichier .scss en .css */ 
+/***************************************************************************************************************/
+
+// font des différents textes 
+
+$textfont: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+
+// Couleur des textes écran
+
+$screenTextColor: #333;
+
+// Couleur des textes mobile
+
+$mobileTextColor: #333;
+
+/* Couleur du cercle du loader */ 
+
+$loaderCircle: 16px solid #f3f3f3;
+
+/* Couleur de l'animation du loader */ 
+
+$loaderInside: 16px solid #3498db; 
+
+/* Couleur de l'UX square (le carré qui permet à l'utilisateur de choisir l'image à faire apparaître en version mobile) */
+
+$UXSquareColor: white;
+
+/* Box shadow de l'UX square */ 
+
+$UXSquareBoxShadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+;
+
+/* Couleur qui valide le changement d'image à l'utilsateur */ 
+
+$UXSquareSwitchImage : #3498db;
+
+
+
+
+
+/************************************/
+/************** Styles **************/
+/************************************/
+
+
+
+
+
+
+/* Containers */ 
+
+
+.ref_container {
+    width: 100%;
+    max-width: 1440px; 
+    margin-left: auto; 
+    margin-right: auto;
+    padding: 5px;
+}
+
+.oneBloc {
+    width: 100%; 
+    max-width: 1440px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center; 
+    align-content: center; 
+}
+
+.oneBloc img, .oneBloc div, .oneBloc span {
+    transition: opacity 0.2s linear;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+}
+
+.firstCase {
+    text-align: left;
+    width: 25%; 
+    position: relative;
+    overflow: hidden;
+    z-index: 60;
+}
+
+.secondCase {
+    text-align: left;
+    width: 25%; 
+    position: relative;
+    overflow: hidden;
+    z-index: 60;
+}
+
+.thirdCase {
+    text-align: left;
+    width: 25%; 
+    position: relative;
+    overflow: hidden;
+    z-index: 60;
+}
+
+.firstCase p, .secondCase p, .thirdCase p {
+    margin: 0 0;
+}
+
+
+
+
+
+/* images et hover */ 
+
+
+
+
+.firstCase img, .secondCase img, .thirdCase img {
+    width: 100%; 
+    height: auto; 
+    z-index: 50;
+}
+
+
+
+/* Apparition du texte au hover */ 
+
+
+
+
+.description_image {
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    width: 80%;
+    font-family: $textfont;
+    color: $screenTextColor;
+
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.description_site_image_1, .description_site_image_2, .description_site_image_3, .description_projet_image_1, .description_projet_image_2, .description_projet_image_3 {
+    opacity: 0;
+}
+
+/* Keyframes */ 
+
+@-webkit-keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@-o-keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@-moz-keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* loader */ 
+
+#loader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+#loader div {
+    border: $loaderCircle;
+    border-top: $loaderInside;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-animation: spin 2s linear infinite; 
+    -moz-animation:  spin 2s linear infinite;
+    -o-animation:  spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+
+
+
+
+
+
+/*************************************/
+/*********** Version mobile **********/ 
+/*************************************/
+
+
+
+
+
+
+
+/* suppression du style de la version écran  */
+
+.ref_container.device .oneImage_device p {
+    opacity: inherit;
+    text-align: center;
+    margin: 0 0; 
+    padding: 0 0;
+}
+
+.ref_container.device {
+    max-width: inherit;
+    padding: inherit;
+    margin: 0 0; 
+    padding: 0 0;
+    width: inherit;
+    display: inherit;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.ref_container.device #ref_mobile_child { /* /!\ largeur du div et position avec JavaScript, ne pas modifier */
+    position: relative;
+
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.ref_container.device .oneImage_device {
+    display: flex;
+}
+
+
+/* Version mobile */ 
+
+
+.ref_container.device #draggable_container { /* /!\ largeur du div avec JavaScript, ne pas modifier  */
+    display: flex;
+    flex-wrap: nowrap;
+
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.ref_container.device #UX_square {
+    position: absolute; 
+    left: 50%;
+    top: 0; 
+    border: 5px solid; 
+    z-index: 100;
+    box-shadow: $UXSquareBoxShadow;
+    border-color: $UXSquareColor;
+    color: $UXSquareSwitchImage;
+
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    transition: border 0.2s linear;
+    -webkit-transition:  border 0.2s linear;
+    -moz-transition:  border 0.2s linear;
+    -o-transition:  border 0.2s linear;
+}
+
+.ref_container.device .description_image_device {
+    opacity: 1;
+    color: $mobileTextColor;
+    font-family: $textfont;
+}
+
+.ref_container.device .oneImage_device {
+    overflow: hidden;
+}
+
+.ref_container.device .oneImage_device img {
+    width: 33.333vw; 
+    height: 33.333vw; 
+}
+
+.ref_container.device #description_container {
+    position: relative;
+    width: 60vw; 
+    left: 50%;
+    bottom: 0;
+    z-index: 100;
+    margin-top: 10vh;
+
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.ref_container.device #description_container .oneText_device {
+    position: absolute; 
+    left: 50%; 
+    top: 0; 
+    width: 100%; 
+    text-align: left;
+
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+
+    transition: opacity 0.3s linear;
+    -webkit-transition: opacity 0.3s linear;
+    -moz-transition: opacity 0.3s linear;
+    -o-transition: opacity 0.3s linear;
+}
+
+.dynamic_image { 
+    height: auto; 
+    width: 50vw;
+}
+
+.oneText_device > a > p {
+    text-align: center;
+}
+
+@media screen and (max-width: 42.5em) {
+    .dynamic_image { 
+        height: auto; 
+        width: 80vw;
+    }
+
+    .ref_container.device #description_container {
+        width: 90vw; 
+    }
+}
+
+@media screen and (max-width: 35.5em) {
+    .dynamic_image { 
+        height: auto; 
+        width: 90vw;
+    }
+
+    .ref_container.device #description_container {
+        width: 98vw; 
+    }
+}

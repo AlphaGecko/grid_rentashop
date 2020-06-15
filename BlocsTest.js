@@ -22,12 +22,8 @@ var BlocsTest = /*#__PURE__*/function () {
   function BlocsTest() {
     _classCallCheck(this, BlocsTest);
 
-    this.gridTest = "Tests en cours";
     this.testGrid = [];
     this.addToGrid = 1;
-    this.modulo3Test;
-    this.imageTest;
-    this.imageSizeTest;
   }
 
   _createClass(BlocsTest, [{

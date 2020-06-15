@@ -110,10 +110,13 @@ function changePxValueToInteger(DOMRef, CSSValue) {
 }
 
 function UXSquareValidation() {
-    $('#UX_square').css('border-color', '#3498db');
+    let UXValidation = $('#UX_square').css('color');
+    let UXReset = $('#UX_square').css('border-color');
+
+    $('#UX_square').css('border-color', UXValidation);
 
     setTimeout(() => {
-        $('#UX_square').css('border-color', 'white');
+        $('#UX_square').css('border-color', UXReset);
     }, 100);
 }
 

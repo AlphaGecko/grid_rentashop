@@ -93,8 +93,6 @@
     opacity: 0;
 }
 
-/* loader */ 
-
 /* Keyframes */ 
 
 @-webkit-keyframes spin {
@@ -129,6 +127,7 @@
     align-items: center;
     opacity: 0;
     z-index: -1000;
+    overflow: hidden;
 }
 
 #loader div {
