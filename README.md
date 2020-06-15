@@ -69,29 +69,21 @@ Outil entièrement prêt à l'emploi. Il suffit d'ajouter dans le body dans votr
 
 Entre les balises head :  
   
-    <!-- main style -->  
     <link rel="stylesheet" href="dynamicGalery.css" media="screen"  type="text/css"/>  
-    <!-- Jquery (draggable) -->  
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">  
-    <!-- Foundation -->  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">  
 
 Entre les balises body :   
 
-    <!-- Référence dans lequel le contenu sera injecté [Obligatoire] -->  
     <div class="ref_container"></div>  
-    <!-- loader [Optionnel] -->  
-    <div id="loader"><div></div></div>  
-    <!-- Jquery -->  
+    <div id="loader"><div></div></div> 
+    
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script> 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>  
-    <!-- Foundation -->  
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>  
-    <!-- Scripts des blocs -->  
     <script src="custom.js"></script>   
     <script src="galleryScript.min.js"></script>   
-
 
 Les différentes données et styles dynamiques sont alors injectés dans le div avec la classe "ref_container". 
 Bien entendu, si vous souhaitez appelez les bibliothèques Jquery, Jquery UI ou Foundation autrement que via un lien CDN, vous pouvez enlever les liens correspondants.   
