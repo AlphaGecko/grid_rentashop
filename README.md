@@ -16,15 +16,11 @@ Les "cases" sont donc les images relatives aux partenaires et les différents te
 
 Vous ne devez modifier que le tableau dans "custom.js" pour vous servir de Grid_Rentashop.
 
-Sur écran grands et moyens, un système d'apparition dynamique des déscriptions au survol des images est mis en place. Le style et la logique de l'application 
-sont complètement modifiés pour les petits écrans et les appareils mobile, avec mise en place d'une barre avec un scrolling horizontal de la galerie et une apparition dynamique 
-des éléments sous cette barre.  
+Sur écran grands et moyens, un système d'apparition dynamique des descriptions au survol des images est mis en place. Le style et la logique de l'application sont complètement modifiés pour les petits écrans et les appareils mobile, avec mise en place d'une barre avec un scrolling horizontal de la galerie et une apparition dynamique des éléments sous cette barre.  
 
 Vous pouvez ajouter autants de blocs que vous le souhaitez dans le tableau de "custom.js", le script s'adaptera automatiquement.
 
-Un test est lancé lors du démarrage du script, il défini les éventuels erreurs de l'utilisateur lors du remplissage du tableau de "custom.js", et sur
-quelle(s) case(s) l'erreur est présente. Si le script ne fonctionne pas comme il faut alors que vous avez respecter toutes les consignes de ce guide, 
-veuillez regarder la console de votre navigateur. 
+Vous pouvez lancer un test au démarrage du script. Il défini les éventuels erreurs de l'utilisateur lors du remplissage du tableau de "custom.js", et sur quelle(s) case(s) l'erreur est présente. Si le script ne fonctionne pas comme il faut alors que vous avez respecter toutes les consignes de ce guide, veuillez regarder la console de votre navigateur. 
 
 ## Vous pouvez supprimer :
 
@@ -75,8 +71,10 @@ Entre les balises head :
 
 Entre les balises body :   
 
-    <div class="ref_container"></div>  
-    <div id="loader"><div></div></div> 
+    <div id="gallery_container">
+        <div class="ref_container"></div><!-- Référence dans lequel le contenu sera injecté [Obligatoire] -->
+        <div id="loader"><div></div></div><!-- Loader pour version mobile et petits écran [Optionnel] -->
+    </div>
     
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script> 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
